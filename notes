@@ -1,0 +1,21 @@
+Le premier argument sera forcement un const char.
+------------------------PARSING------------------------
+-Checker si on a des flags dans la const sinon putchar
+-Si flag l'identifier et envoyer le parametre à la fonction
+du flag.
+-Si le param n'est pas compatible avec la fonction = CRASH
+-Parvenir à lire les strings même sans les flags.
+
+------------------------FONCTIONS----------------------
+ft_which_flag (strchr  modifié) qui renvoie l'index de
+la fonction du flag
+(void)ft_putchar
+(void)ft_putstr
+(void)ft_putnbr
+(void)ft_to_hexadecimal(?)
+	atoi? itoa?
+	refléchir au type de variable à utiliser
+
+------------------------VARIABLES----------------------
+-Pointeur sur fonctions ?
+	-oui car void fonctions d'affichage

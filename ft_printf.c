@@ -4,32 +4,35 @@
 
 int ft_printf(const char *str, ...)
 {
-	va_list ap;
+	va_list params;
 	int		i;
 
 	i = -1;
-	va_start(ap, str);
+	va_start(params, str);
 
-	va_arg(ap, char *);
+	va_arg(params, char *);
+	while (*str)
+	{
+		if (*str != '%')
+			ft_putchar(*str);
+		str++;
+	}
+	va_arg(params, char *);
 	while (*str)
 	{
 		if(*str != '%')
 			ft_putchar(*str);
 		str++;
 	}
-	va_arg(ap, char *);
-	while (*str)
-	{
-		if(*str != '%')
-			ft_putchar(*str);
-		str++;
-	}
-	va_end(ap);
+	va_end(params);
 	return (0);
 }
 
 int main (void)
 {
-	ft_printf("hola %s\n" "huhu");
+	char no[] = "667677";
+	char u[] = "gui";
+	char str [] = "divvodjpv";
+	ft_printf("sakut", str, no, u);
 }
 // return le nombre de caracteres imprimes sans compter l'octet nul.
