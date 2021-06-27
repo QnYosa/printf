@@ -19,3 +19,8 @@ la fonction du flag
 ------------------------VARIABLES----------------------
 -Pointeur sur fonctions ?
 	-oui car void fonctions d'affichage
+------------------------ALGO---------------------------
+1- parcourir dans un premier temps la string et repérer
+le padding
+2- parcourir le padding
+3- chopper le flag [tableau des flags]
