@@ -1,3 +1,5 @@
+
+
 Le premier argument sera forcement un const char.
 ------------------------PARSING------------------------
 -Checker si on a des flags dans la const sinon putchar
@@ -15,9 +17,12 @@ la fonction du flag
 (void)ft_to_hexadecimal(?)
 	atoi? itoa?
 	refléchir au type de variable à utiliser
-
+	utiliser les operateurs binaires. pour les flags
 ------------------------VARIABLES----------------------
 -Pointeur sur fonctions ?
 	-oui car void fonctions d'affichage
-	--------------------------------------------------
-	utiliser les operateurs binaires. pour les flags
+------------------------ALGO---------------------------
+1- parcourir dans un premier temps la string et repérer
+le padding
+2- parcourir le padding
+3- chopper le flag [tableau des flags]
