@@ -2,21 +2,6 @@
 #include <stdio.h>
 #include "ft_printf.h"
 
-int is_flag (char c)
-{
-	char flags [] = "cspdiuxX";
-	int i;
-
-	i = 0;
-	while (flags[i])
-	{
-		if (flags[i] == c)
-			return (i);
-		i++;
-	}
-	return (0);
-}
-
 int ft_printf(const char *str, ...)
 {
 	va_list params;
