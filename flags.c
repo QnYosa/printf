@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-
 int	plus_width(char *str, int va_arg)
 {
 	int	i;
@@ -35,3 +34,5 @@ int	plus_width(char *str, int va_arg)
 		return (0);
 	return (i);
 }
+
+int space(char)

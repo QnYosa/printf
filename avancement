@@ -7,9 +7,9 @@
 
 ----------------------------FLAGS----------------------------
 -
-+ 				ok
-(space)
-#
++ (bonus)			ok
+(space)(bonus)
+#(bonus)
 0
 
 ---------------------WIDTH & DESCRIPTION---------------------
@@ -28,15 +28,15 @@ L
 --------------------------SPECIFIER--------------------------
 c 				ok
 d or I
-e
+e (bonus)
 E
-f 
+f (bonus)
 g
 G 
-o
+o octal
 s 				ok
-u
+u 
 x
 X 
 p 
-n 
+n (bonus)

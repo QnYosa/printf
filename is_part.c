@@ -15,12 +15,14 @@
 int	is_flag_ (char c)
 {
 	const char	flags [] = "-+ #0";
+	char *list;
 
-	while (*str)
+	list = flags;
+	while (*list)
 	{
-		if (*str == c)
+		if (*list == c)
 			return (1);
-		str++;
+		list++;
 	}
 	return (0);
 }
@@ -28,12 +30,15 @@ int	is_flag_ (char c)
 int	is_spec(char c)
 {
 	const char	spec [] = "cspdiuxX";
+	char *list;
 
-	while (*spec)
+	list = spec;
+	while (*list)
 	{
-		if (*spec == c)
+		if (*list == c)
 			return (1);
-		spec++;
+		list++;
 	}
 	return (0);
 }
+
