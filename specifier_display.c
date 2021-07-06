@@ -2,18 +2,31 @@
 
 void	ft_putchar(char c)
 {
+	static int	bytes = 0;
+
 	write(1, &c, 1);
+	bytes++;
 }
 
 void	ft_putstr(char *str)
 {
 	while (*str)
-		write(1, str++, 1);
+		ft_putchar(*str);
+}
+
+void	ft_putnstr(char *str, int i)
+{
+	while (*str && i > 0)
+	{
+		ft_putchar(*str);
+		i--;
+		str++;
+	}
 }
 
 void	ft_putnbr(int n)
 {
-	char c;
+	char	c;
 
 	c = '0';
 	if (n < 0)
@@ -31,22 +44,20 @@ void	ft_putnbr(int n)
 	}
 }
 
-void	ft_putnbr_base(int n)
+/*
+void	ft_putnbr(int n, char *base)
 {
-	char base [] = "0123456789ABCDEF";
-	unsigned int nb;
-
 	if (n < 0)
 	{
 		n *= 1;
 		write(1, "-", 1);
 	}
-	nb = n;
-	if (nb <= 16 && nb >= 0)
-		write(1, &base[nb], 1);
+	if (n <= 16 && n >= 0)
+		write(1, &base[n], 1);
 	else
 	{
-		ft_putnbr_base(nb /16);
-		ft_putnbr_base(nb % 16);
+		ft_putnbr_base(n / 16);
+		ft_putnbr_base(n % 16);
 	}
 }
+*/

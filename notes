@@ -15,7 +15,6 @@ la fonction du flag
 (void)ft_putstr
 (void)ft_putnbr
 (void)ft_to_hexadecimal(?)
-	atoi? itoa?
 	refléchir au type de variable à utiliser
 	utiliser les operateurs binaires. pour les flags
 ------------------------VARIABLES----------------------

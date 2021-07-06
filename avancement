@@ -6,19 +6,24 @@
 
 
 ----------------------------FLAGS----------------------------
--
+- justify content
 + (bonus)			ok
-(space)(bonus)
+(space)(bonus) 		
 #(bonus)
-0
-
+0 fout des zeros.
+					Si 0 et - apparaissent, 0 est ignoré.
+Si 0 est spécifié pour un format d’entier ( i , u , x , X , o , d )
+et qu’une spécification de précision est également présente
+(par exemple,), %04.d 0 est ignoré. 
 ---------------------WIDTH & DESCRIPTION---------------------
 (number)
 *
 
 --------------------------PRECISION--------------------------
-.number
-.*
+.number (fontctionne pour les strings) ok putnstr
+.* ok 
+Si la spécification de précision est un astérisque (*), un argument int issu de la liste d’arguments fournit la valeur. Dans la liste d’arguments, l' precision argument doit précéder la valeur mise en forme, comme illustré dans cet exemple :
+printf( "%.*f", 3, 3.14159265 ); /* 3.142 output */
 
 --------------------------LENGTH&DESCRIPTION-----------------
 h

@@ -3,8 +3,8 @@
 
 int main ()
 {
-	char lord [] = "lord";
-	int n = 5;
-	const char hola[] = "%p forgive me %d";
+	char	lord [] = "lord";
+	int	n = 5;
+	const char	hola[] = "%p forgive me %d";
 	printf(hola, lord, n);
 }

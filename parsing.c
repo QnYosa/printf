@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 
-int plus_width(char *str, int va_arg)
+int	plus_width(char *str, int va_arg)
 {
-	int i;
+	int	i;
 
 	if (!str || !va_arg)
 		return (0);
@@ -23,10 +23,10 @@ int plus_width(char *str, int va_arg)
 	return (i);
 }
 
-int count_width(char *str)
+int 	count_width(char *str)
 {
-	int n;
-	int i;
+	int	n;
+	int	i;
 
 	n = 0;
 	i = -1;
@@ -40,8 +40,8 @@ int count_width(char *str)
 
 int	ft_test(const char *str, ...)
 {
-	va_list params;
-	char 	*s1;
+	va_list	params;
+	char	*s1;
 	int		i;
 
 	i = -1;
@@ -51,13 +51,13 @@ int	ft_test(const char *str, ...)
 	{
 		ft_putstr(s1);
 		write(1, "\n", 1);
-		s1 = va_arg(params, char*);
+		s1 = va_arg(params, char *);
 	}
 	va_end(params);
 	return (0);
 }
 
-int main ()
+int	main (void)
 {
 	printf("%d", plus_width("+", 4));
 }

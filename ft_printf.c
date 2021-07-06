@@ -1,13 +1,26 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include "ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
+/*   Updated: 2021/07/01 22:39:40 by dyoula           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_printf(const char *str, ...)
+#include "ft_printf.h"
+void	ft_maestro(char **str, percent box)
+{
+	//checker les flags
+}
+
+int		ft_printf(const char *str, ...)
 {
 	va_list params;
-	int		i;
+	percent box;
 
-	i = 0;
 	va_start(params, str);
 	va_arg(params, char *);
 	while (*str)
@@ -19,20 +32,19 @@ int ft_printf(const char *str, ...)
 	va_arg(params, char *);
 	while (*str)
 	{
-		if(*str != '%')
+		if (*str != '%')
 		{
-			i++;
 			ft_putchar(*str);
 		}
-		if (is_flag(*str))
-
-		str++;
+		else
+			ft_maestro(&str, box);
+			str++;
 	}
 	va_end(params);
 	return (i);
 }
 
-int main (void)
+int	main(void)
 {
 	char no[] = "667677";
 	char u[] = "gui";

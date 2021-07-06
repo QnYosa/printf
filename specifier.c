@@ -1,0 +1,4 @@
+void	maestro(char c)
+{
+	
+}
