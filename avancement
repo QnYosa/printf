@@ -32,16 +32,16 @@ L
 
 --------------------------SPECIFIER--------------------------
 c 				ok
-d or I
+d or I			ok
 e (bonus)
 E
 f (bonus)
 g
 G 
-o octal
+o octal			ok
 s 				ok
-u 
-x
-X 
-p 
+u 				ok
+x				ok
+X 				b
+p 				ok
 n (bonus)

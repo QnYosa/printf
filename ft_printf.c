@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/01 22:39:40 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/06 15:05:18 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ void	ft_maestro(char **str, percent box)
 	//checker les flags
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list params;
-	percent box;
+	va_list	params;
+	percent	box;
 
 	va_start(params, str);
 	va_arg(params, char *);
@@ -38,7 +38,7 @@ int		ft_printf(const char *str, ...)
 		}
 		else
 			ft_maestro(&str, box);
-			str++;
+		str++;
 	}
 	va_end(params);
 	return (i);

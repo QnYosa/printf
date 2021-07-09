@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/01 22:51:03 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/07 16:16:02 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ typedef struct caracteristics
 	int plus;
 }	percent;
 
-void	ft_putstr(char *str);
 void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_putnstr(char *str, int i);
+void	ft_putnbr(int n);
+void	ft_putnbr_u(unsigned int n);
+void	ft_print_address(unsigned long int n);
+void	ft_print_hexa(unsigned long int n);
 int     ft_atoi(char **str);
 int		plus(char *str, int va_arg);
 int		ft_strlen(char *str);

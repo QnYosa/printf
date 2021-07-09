@@ -31,7 +31,7 @@ void	ft_putnbr(int n)
 	c = '0';
 	if (n < 0)
 	{
-		n *= 1;
+		n *= -1;
 		write(1, "-", 1);
 	}
 	c += n;
@@ -44,20 +44,22 @@ void	ft_putnbr(int n)
 	}
 }
 
-/*
-void	ft_putnbr(int n, char *base)
+void	ft_putnbr_u(unsigned int n)
 {
+	char	c;
+
+	c = '0';
 	if (n < 0)
 	{
 		n *= 1;
 		write(1, "-", 1);
 	}
-	if (n <= 16 && n >= 0)
-		write(1, &base[n], 1);
+	c += n;
+	if (n <= 9 && n >= 0)
+		write(1, &c, 1);
 	else
 	{
-		ft_putnbr_base(n / 16);
-		ft_putnbr_base(n % 16);
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
 }
-*/

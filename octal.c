@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   precision.c                                        :+:      :+:    :+:   */
+/*   octal.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 17:51:23 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/07 14:25:28 by dyoula           ###   ########.fr       */
+/*   Created: 2021/07/09 16:37:10 by dyoula            #+#    #+#             */
+/*   Updated: 2021/07/09 17:29:54 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-/**
-**1- compter la precision et l'enregistrer dans la struct. ok 
-**2- chopper le flag et le type de variable. 
-**
-**/
-
-int	count_precision(char **str)
+void	ft_print_oct(unsigned int n)
 {
-	int	precision;
+	static char	base[] = "012345678";
 
-	if (**str == '.')
-		(*str)++;
-	precision = ft_atoi(str);
-	return (precision);
+	if (n < 0)
+	{
+		n *= -1;
+		write(1, "-", 1);
+	}
+	if (n <= 16 && n >= 0)
+		ft_putchar(base[n]);
+	else
+	{
+		ft_print_oct(n / 8);
+		ft_print_oct(n % 8);
+	}	
 }
-
-void	struct_precision(char **str, percent *va)
-{
-	va->precision = count_precision(str);
-	printf("%d", va->precision);
-}
-
+/*
 int	main(void)
 {
-	char	*s;
-	percent	va;
-
-	s = ft_strdup(".45d");
-	struct_precision(&s, &va);
+	ft_print_oct(258);
 }
+*/
