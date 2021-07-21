@@ -1,11 +1,12 @@
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
-	static int	bytes = 0;
+	int	bytes = 0;
 
 	write(1, &c, 1);
 	bytes++;
+	return (bytes);
 }
 
 void	ft_putstr(char *str)

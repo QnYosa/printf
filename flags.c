@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	flag_struct_fill(char c, percent box)
+void	flag_struct_fill(char c, container *box)
 {
 	if (c == '-')
 		box->minus = 1;
@@ -26,7 +26,7 @@ void	flag_struct_fill(char c, percent box)
 		box->diez = 1;
 }
 
-int	is_flag_(char c, percent box)
+int	is_flag_(char c, container *box)
 {
 	const char	flags [] = "-+ #0";
 	char		*list;
@@ -77,12 +77,12 @@ int	space(char *str, int va_arg)
 	if (*str == ' ' && va_arg >= 0)
 	{
 		i++;
-		ft_putchar(1, ' ', 1);
+		ft_putchar(' ');
 	}
 	else if (*str == ' ' && *str + 1 == '-')
 	{
 		if (va_arg >= 0)
-			ft_putchar(1, ' ', 1);
+			ft_putchar(' ');
 		i++;
 	}
 	else

@@ -1,4 +1,0 @@
-void	maestro(char c)
-{
-	
-}

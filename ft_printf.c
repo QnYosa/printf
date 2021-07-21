@@ -11,31 +11,31 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-void	ft_maestro(char **str, percent box)
+void	ft_maestro(char **str, container *box)
 {
 	while (*str)
 	{
 		if (*str != '%')
-			box->len += ft_putchar(*str);
+			box->printed += ft_putchar(**str);
 		// checker les flags
 		// checker la width 
 		// checker la precision
 		// length 
 		str++;
 	}
-	va_arg(params, char *);
+	va_arg(box->params, char *);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	container	box;
+	container	*box;
 
 	va_start(box->params, str);
 	if (*str)
-		ft_maestro(*str, box);
+		ft_maestro(*str, &box);
 	va_arg(box->params, char *);
 	va_end(box->params);
-	return (i);
+	return (box->printed);
 }
 
 int	main(void)

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	is_spec(char c)
+int	is_spec(char c, container *box)
 {
 	const char	spec [] = "cspdiuxX";
 	char		*list;
@@ -22,7 +22,7 @@ int	is_spec(char c)
 	{
 		if (*list == c)
 		{
-			box.spec == *list; // on precise le spec. 
+			box->spec == *list; // on precise le spec. 
 			return (1);
 		}
 		list++;
@@ -30,8 +30,8 @@ int	is_spec(char c)
 	return (0);
 }
 
-void	search_flags(char **str, percent box)
+void	search_flags(char **str, container *box)
 {
-	while (is_flag(**str, percent box))
+	while (is_flag(**str, box))
 		(*str)++;
 }

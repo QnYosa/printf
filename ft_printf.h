@@ -29,14 +29,17 @@ typedef struct caracteristics
 	int			left; //boolean if '-'
 	int			minus;
 	int			precision;
-	int 		printed;
+	int 		printed; // nombre de bytes
 	int 		plus;
 	int			diez;
 	int			asterisque;
+	int			len;
+	int			space;
+	char		spec;
 	va_list		params;
 }	container;
 
-void	ft_putchar(char c);
+int		ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnstr(char *str, int i);
 void	ft_putnbr(int n);
