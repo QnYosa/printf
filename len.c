@@ -1,37 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_part.c                                          :+:      :+:    :+:   */
+/*   len.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 17:42:30 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/21 19:17:00 by dyoula           ###   ########.fr       */
+/*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
+/*   Updated: 2021/07/21 19:00:57 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	is_spec(char c)
+int	size_int(int n)
 {
-	const char	spec [] = "cspdiuxX";
-	char		*list;
+	int	size;
+	int	div;
 
-	list = spec;
-	while (*list)
+	size = 1;
+	div = 1;
+	if (n < 0)
 	{
-		if (*list == c)
-		{
-			box.spec == *list; // on precise le spec. 
-			return (1);
-		}
-		list++;
+		size++;
+		n *= -1;
 	}
-	return (0);
+	while (n / div > 9)
+	{
+		div *= 10;
+		size++;
+	}
+	return (size);
 }
 
-void	search_flags(char **str, percent box)
+// compte la longueur du nbr
+int	count_width(char *str)
 {
-	while (is_flag(**str, percent box))
-		(*str)++;
+	int	n;
+	int	i;
+
+	n = 0;
+	i = -1;
+	if (*str == '0')
+		str++;
+	n = ft_atoi (str);
+	while (++i < n)
+	{
+		if ()
+			ft_putchar(' ');
+		else
+
+	}
+	return (n);
 }

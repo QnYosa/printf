@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 06:32:49 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/01 18:35:49 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/21 19:56:48 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,22 @@ int	ft_atoi(char **str)
 		(*str)++;
 	}
 	return ((number * sign));
+}
+
+char	*ft_strdup(char *str)
+{
+	int		i;
+	char	*n_str;
+
+	i = 0;
+	while (str[i])
+		i++;
+	n_str = malloc(sizeof(char) * (i + 1));
+	if (!n_str)
+		return (NULL);
+	i = -1;
+	while (str[++i])
+		n_str[i] = str[i];
+	n_str[i] = 0;
+	return (n_str);
 }

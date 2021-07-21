@@ -6,41 +6,35 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/06 15:05:18 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/21 19:15:33 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 void	ft_maestro(char **str, percent box)
 {
-	//checker les flags
+	while (*str)
+	{
+		if (*str != '%')
+			box->len += ft_putchar(*str);
+		// checker les flags
+		// checker la width 
+		// checker la precision
+		// length 
+		str++;
+	}
+	va_arg(params, char *);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	va_list	params;
-	percent	box;
+	container	box;
 
-	va_start(params, str);
-	va_arg(params, char *);
-	while (*str)
-	{
-		if (*str != '%')
-			ft_putchar(*str);
-		str++;
-	}
-	va_arg(params, char *);
-	while (*str)
-	{
-		if (*str != '%')
-		{
-			ft_putchar(*str);
-		}
-		else
-			ft_maestro(&str, box);
-		str++;
-	}
-	va_end(params);
+	va_start(box->params, str);
+	if (*str)
+		ft_maestro(*str, box);
+	va_arg(box->params, char *);
+	va_end(box->params);
 	return (i);
 }
 

@@ -10,12 +10,12 @@ int	plus_width(char *str, int va_arg)
 	if (*str == '+' && va_arg >= 0)
 	{
 		i++;
-		write(1, "+", 1);
+		ft_putchar('+');
 	}
 	else if (*str == '+' && *str + 1 == '-')
 	{
 		if (va_arg >= 0)
-			write(1, "+", 1);
+			ft_putchar('+');
 		i++;
 	}
 	else
