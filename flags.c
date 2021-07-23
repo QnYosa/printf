@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:04:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/21 19:23:34 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/23 19:06:51 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	flag_struct_fill(char c, container *box)
 		box->diez = 1;
 }
 
-int	is_flag_(char c, container *box)
+int	is_flag_(char c, char **str, container *box)
 {
 	const char	flags [] = "-+ #0";
 	char		*list;
@@ -37,6 +37,7 @@ int	is_flag_(char c, container *box)
 		if (*list == c)
 		{
 			flag_struct_fill(c, box);
+			str++;
 			return (1);
 		}
 		list++;

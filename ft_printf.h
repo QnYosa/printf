@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/21 19:58:17 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/23 19:06:54 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ typedef struct caracteristics
 	int			asterisque;
 	int			len;
 	int			space;
+	int			percent; // if je suis dans un arg
 	char		spec;
 	va_list		params;
 }	container;
+
+int		is_flag_(char c, char **str, container *box);
+void	flag_struct_fill(char c, container *box);
 
 int		ft_putchar(char c);
 void	ft_putstr(char *str);

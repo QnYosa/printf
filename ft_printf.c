@@ -6,22 +6,22 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/21 19:15:33 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/23 19:07:09 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 void	ft_maestro(char **str, container *box)
 {
 	while (*str)
 	{
 		if (*str != '%')
 			box->printed += ft_putchar(**str);
-		// checker les flags
-		// checker la width 
-		// checker la precision
-		// length 
-		str++;
+		while (is_flag_(**str, box))
+		{
+			flag_struct_fill(**str, *str, box);
+		}
 	}
 	va_arg(box->params, char *);
 }
