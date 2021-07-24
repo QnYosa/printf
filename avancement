@@ -28,6 +28,10 @@ de la liste d’arguments fournit la valeur. Dans la liste d’arguments, l' pre
 argument doit précéder la valeur mise en forme, comme illustré dans cet exemple :
 printf( "%.*f", 3, 3.14159265 ); /* 3.142 output */
 
+##########											########
+pa os cifras a formula e:  precisiao menos a width do numero
+##########											########
+
 --------------------------LENGTH&DESCRIPTION-----------------
 h
 I

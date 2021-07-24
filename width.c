@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:18:21 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 16:48:06 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 17:36:23 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,6 @@
 ** '*' et nombre ne peuvent pas cohabiter
 */
 // compte la longueur du nbr
-void count_width(char **str, container *box)
-{
-	int	n;
-	int	i;
-
-	n = 0;
-	i = -1;
-	n = ft_atoi (str);
-	box->width = n;
-}
 
 void	check_ast(char **str, container *box)
 {
@@ -40,7 +30,7 @@ void	check_ast(char **str, container *box)
 void	width_maestro(char **str, container *box)
 {
 	check_ast(str, box);
-	count_width(str, box);
+	box->width = ft_atoi (str);
 	check_ast(str, box);
 }
 

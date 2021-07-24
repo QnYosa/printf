@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:51:23 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 16:48:52 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 17:51:07 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,6 @@
 **
 **/
 
-void	count_precision(char **str, container *box)
-{
-	if (**str == '.')
-		(*str)++;
-	box->precision = ft_atoi(str);
-}
-
 void	asterix(char **str, container *box)
 {
 	if (**str == '*')
@@ -37,16 +30,27 @@ void	asterix(char **str, container *box)
 
 void	precision_struct_fill(char **str, container *box)
 {
-	count_precision(str, box);
 	asterix(str, box);
-	//printf("%d, %d",box->precision,  box->asterisque);
+	box->precision = ft_atoi(str);
+	asterix(str, box);
 }
 
+void	precision_maestro(char **str, container *box)
+{
+	if (**str == '.')
+		(*str)++;
+	precision_struct_fill(str, box);
+}
+
+//ALGO FUNCIONAL MAIS PRECISO FAZER A GESTIAO DAS LIMITAS  EX VARIAS '**'
+/*
 int	main(void)
 {
 	char		*s;
 	container	box;
 
 	s = ft_strdup(".45*d");
-	precision_struct_fill(&s, &box);
+	precision_maestro(&s, &box);
+	printf("%c", *s);
 }
+*/

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 16:49:27 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 17:14:56 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ typedef struct caracteristics
 	int 		printed; // nombre de bytes
 	int 		plus;
 	int			diez;
-	int 		w_ast; // asterisque width
-	int			p_ast; // asterisque precision
+	int 		w_ast; // asterisque width ok
+	int			p_ast; // asterisque precision ok 
 	int			len;
-	int			width;
+	int			width; // ok
 	int			percent; // if je suis dans un arg
 	char		spec;
 	va_list		params;

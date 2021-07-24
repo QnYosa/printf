@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 01:24:48 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 16:15:23 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 17:17:21 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	main (void)
 {
 	int	n;
 	int nu;
-	char s [] = "fufulokoa";
+	char s [] = "fufulokoa"; // len 9
 
 	//v = 3,1578;
-	n = 2147483647;
+	n = 2147483647; // len 10
 	nu = 35;
 	printf("--------------------------------------\n");
 	printf("%-54dkoko\n", nu); // koko va a la fin a cause du moins. 
@@ -30,16 +30,19 @@ int	main (void)
 	/* 
 	** 	printf("% +d\n", n); flag ' ' is ignored when flag '+' is present
 	**
-	*/
 	printf("-----------------FLAGS----------------\n");
 	printf("1 % 0d\n", n); //espace l'emporte
 	printf("2 %0+*d\n", 100, n);
 	printf("3 %+-*d\n", 100, n);
-	printf("4 %0*54d\n", 10, n);
+	printf("4 %0*d\n", 10, n);
 	printf("5 %.2s\n", s);
 	printf("6 %.5d\n", nu); // fout des zeros devant
+	*/
+	printf("--------------PRECISION---------------\n");
 	//printf("9 %.*4d", nu, n);data argument not used by format string
 	//printf("9 %.3*d", nu, n); fonctionne pas premier arrivé premier servi
-	printf("--------------------------------------\n");
-	//printf("7 %.3d\n", n); on ne tronque pas int  on ajoute des zero devant
+	printf("7 %.25d\n", n); //on ne tronque pas int  on ajoute des zero devant si
+	//precision > width nbr.  
+	printf("8 %.25s\n", s); // if precision > len no se hacee carajo.
+	printf("9 %.2s\n", s); /// else se la corta.
 }
