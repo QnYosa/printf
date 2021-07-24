@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/23 19:06:54 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 16:49:27 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,27 @@ typedef struct caracteristics
 	int 		printed; // nombre de bytes
 	int 		plus;
 	int			diez;
-	int			asterisque;
+	int 		w_ast; // asterisque width
+	int			p_ast; // asterisque precision
 	int			len;
-	int			space;
+	int			width;
 	int			percent; // if je suis dans un arg
 	char		spec;
 	va_list		params;
 }	container;
 
+//flags
+void	flags_maestro(char **str, container *box);
 int		is_flag_(char c, char **str, container *box);
 void	flag_struct_fill(char c, container *box);
+int		plus(char *str, int va_arg);
 
+//width
+void width_maestro(char **str, container *box);
+
+
+//precision
+//display
 int		ft_putchar(char c);
 void	ft_putstr(char *str);
 void	ft_putnstr(char *str, int i);
@@ -50,8 +60,8 @@ void	ft_putnbr(int n);
 void	ft_putnbr_u(unsigned int n);
 void	ft_print_address(unsigned long int n);
 void	ft_print_hexa(unsigned long int n);
+//utils
 int     ft_atoi(char **str);
-int		plus(char *str, int va_arg);
 int		ft_strlen(char *str);
 char	*ft_strdup(char *str);
 

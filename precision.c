@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:51:23 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/23 17:49:14 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 16:48:52 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	asterix(char **str, container *box)
 {
 	if (**str == '*')
 		(*str)++;
-	box->asterisque = 1;
+	box->p_ast = 1;
 }
 
 void	precision_struct_fill(char **str, container *box)

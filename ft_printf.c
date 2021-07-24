@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/23 19:11:46 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 16:51:11 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@ void	ft_maestro(char **str, container *box)
 	{
 		if (*str != '%')
 			box->printed += ft_putchar(**str);
-		while (is_flag_(**str, box))
-			flag_struct_fill(**str, *str, box);
+		flags_maestro(str, box);
+		width
 	}
 	va_arg(box->params, char *);
 }
 
 int	ft_printf(const char *str, ...)
 {
-	container	*box;
+	container	*box; // enlever l'asterisque
 
 	va_start(box->params, str);
 	if (*str)

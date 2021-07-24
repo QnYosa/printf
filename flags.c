@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:04:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/23 19:06:51 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/24 15:36:42 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,4 +89,10 @@ int	space(char *str, int va_arg)
 	else
 		return (0);
 	return (i);
+}
+
+void	flags_maestro(char **str, container *box)
+{
+	while (is_flag_(**str, box))
+		flag_struct_fill(**str, *str, box);
 }
