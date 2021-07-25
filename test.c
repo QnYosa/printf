@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 01:24:48 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/25 20:16:01 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/25 20:32:59 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,13 @@ int	main (void)
 	printf("% +d\n", n); flag ' ' is ignored when flag '+' is present
 	*/
 	printf("-----------------FLAGS----------------\n");
-	printf("% +d\n", nu);
+	/*
+	la place est totalement interchangeable. 
+	printf("% +d\n", nu); +35$
+	printf("%+-d\n", nu); +35%  
+	printf("%0+10d", nu); +000000035%    
+	*/
+	printf("%+-10d", nu);
 	/*
 	printf("6 %.5d\n", nu); // fout des zeros devant
 	printf("1 % 0d\n", n); //espace l'emporte
