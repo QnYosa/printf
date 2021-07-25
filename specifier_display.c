@@ -2,8 +2,9 @@
 
 int	ft_putchar(char c)
 {
-	int	bytes = 0;
+	int	bytes;
 
+	bytes = 0;
 	write(1, &c, 1);
 	bytes++;
 	return (bytes);

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 17:14:56 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/25 20:01:21 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,29 @@
 
 typedef struct caracteristics
 {
-	int			zero; //if 0 else ' ' (seulement sur la gauche)
-	int			steps; //(nombre de space) - (len du int) if int trop grand tout print;
-	int			left; //boolean if '-'
-	int			minus;
-	int			precision;
-	int 		printed; // nombre de bytes
-	int 		plus;
-	int			diez;
-	int 		w_ast; // asterisque width ok
-	int			p_ast; // asterisque precision ok 
-	int			len;
-	int			width; // ok
-	int			percent; // if je suis dans un arg
-	char		spec;
-	va_list		params;
+	//-------------------flags------------------------------------- 
+	int						minus;
+	int 					plus;
+	int 					space;
+	int						zero; //if 0 else ' ' (seulement sur la gauche)
+	int						steps; //(nombre de space) - (len du int) if int trop grand tout print;
+	int						diez;
+	
+	//-------------------precision && width------------------------- 
+	int						len; // taille de l'argument pour precision et width.
+	int 					letters; // si c'est des nu ou des lettres qu'on manipule. 
+
+	//--------------------- width ---------------------------------
+	unsigned int 			width; // ok
+
+	// -------------------- precision ------------------------------
+	unsigned int			precision;
+
+	//----------------------specifier-------------------------------
+	char					spec;
+	int 					printed; // nombre de bytes
+	long int				copy;
+	va_list					params;
 }	container;
 
 //flags

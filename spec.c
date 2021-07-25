@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 20:07:37 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/25 18:32:54 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	spec_struct_fill(char c, container *box)
 	{
 		if (*list == c)
 		{
+			if (c == 'c' || c == 's')
+				box->letters = 1;
 			box->spec == *list;
 			return (1);
 		}
@@ -31,7 +33,7 @@ int	spec_struct_fill(char c, container *box)
 }
 
 
-void	spec_maestro(char **str, container box, void)
+void	spec_maestro(char **str, container *box)
 {
-	
+	spec_struct_fill(str, container box);
 }
