@@ -10,9 +10,12 @@ int	ft_putchar(char c)
 	return (bytes);
 }
 
-void	ft_putstr(char *str)
+void	ft_putnstr(char *str, int n)
 {
-	while (*str)
+	int i;
+
+	i = -1;
+	while (++i < n && *str)
 		ft_putchar(*str);
 }
 

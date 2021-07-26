@@ -16,11 +16,13 @@ int	main (void)
 {
 	int	n;
 	int nu;
+	int na;
 	//char s [] = "fufulokoa"; // len 9
 
 	//v = 3,1578;
 	n = 2147483647; // len 10
 	nu = 35;
+	na = -35;
 	/*
 	printf("--------------------------------------\n");
 	printf("%-54dkoko\n", nu); // koko va a la fin a cause du moins. 
@@ -34,11 +36,14 @@ int	main (void)
 	printf("-----------------FLAGS----------------\n");
 	/*
 	la place est totalement interchangeable. 
-	printf("% +d\n", nu); +35$
+	printf("% +d\n", nu); +35$ '+' > ' '
 	printf("%+-d\n", nu); +35%  
 	printf("%0+10d", nu); +000000035%    
+	printf("%+-10d", nu); +35       % 
+	printf("% d\n", nu);     35%  
+	printf("%+d\n", 0);
+	printf("%+d\n", na);
 	*/
-	printf("%+-10d", nu);
 	/*
 	printf("6 %.5d\n", nu); // fout des zeros devant
 	printf("1 % 0d\n", n); //espace l'emporte
@@ -46,9 +51,11 @@ int	main (void)
 	printf("3 %+-*d\n", 100, n);
 	printf("4 %0*d\n", 10, n);
 	printf("5 %.2s\n", s);
+	*/
 	printf("--------------PRECISION---------------\n");
-	//printf("9 %.*4d", nu, n);data argument not used by format string
-	//printf("9 %.3*d", nu, n); fonctionne pas premier arrivé premier servi
+	printf("9 %.*d\n", nu, n);//data argument not used by format string
+	printf("9 %.11d\n", n);//		9 02147483647%
+	/*
 	printf("7 %0100.25d\n", n); //on ne tronque pas int  on ajoute des zero devant si
 	//precision > width nbr.  
 	printf("8 %.25s\n", s); // if precision > len no se hacee carajo.

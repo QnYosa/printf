@@ -22,7 +22,7 @@ void	check_ast(char **str, container *box)
 {
 	if (**str == '*')
 		(*str)++;
-	box->width = va_arg(params, int);
+	box->width = va_arg(box->params, int);
 }
 
 void	width_maestro(char **str, container *box)

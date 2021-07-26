@@ -14,55 +14,43 @@
 void	print_width(container *box)
 {
 	int	i;
-	//if box->zero == 1 et width > 0 et et precision supperieure a taille du number
+	//if box->zero == 1 et width > 0 et et precision superieure a taille du number
 	// les zeros deviennent des espaces.
 	i = -1;
-	if (box->zero == 0 && box->w_ast == 0)
-		while (++i < box-> width)
+	if (box->zero == 0)
+		while (++i < box->width)
 			ft_putchar(' ');
-	else if (box->zero == 1 && box->w_ast == 1)
+	else if (box->zero == 1)
 		while (++i < box-> width)
 			ft_putchar('0');
-/*
-	else
-		while (i < va_arg)
-			if (box->zero == 1)
-				ft_putchar('0');
-			else
-				ft_putchar(' ');
-*/	
 }
-// if precision > len no se hacee carajo.
 
-// si precision > len se printa lo todo 
 void	print_precision_l(container *box)
 {
-	if (box->p_ast == 0)
-	{
-		to_print = size_int(box->precision);
-		if (to_print)
-	}		
+	if (box->spec == 's')
+		ft_putnstr(box->string, box->precision);
+	if (box->spec == 'c')
+		ft_putchar(box->caracter);
 }
 
 void 	print_precision_number(container *box)
 {
-	
+	int i;
+
+	i = -1;
+	while (i++ <= box->precision - count_width(box->copy))
+		ft_putchar('0');
 }
 
 int		struct_disp_maestro (container *box)
 {
-	if (box->letters == 1 && box->p_ast == 0)
-	{
-		box->len = ft_strlen(va_arg);
-		
-	}
-	box->printed = 0;
 	if (box->minus == 0)
-	{
 		print_width(box);
-		if (box->letters == 1)
-			print_precision_l(box);
-		else
-			print_precision_number(box));
-	}
+	if (box->letters == '1')
+		print_precision_l(box);
+	else
+		print_precision_number(box);
+	if (box->minus == 1)
+		print_width(box);
+
 }

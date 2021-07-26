@@ -23,21 +23,6 @@ int	plus_width(char *str, int va_arg)
 	return (i);
 }
 
-int 	count_width(char *str)
-{
-	int	n;
-	int	i;
-
-	n = 0;
-	i = -1;
-	if (*str == '0')
-		str++;
-	n = ft_atoi (&str);
-	while (++i < n)
-		ft_putchar(' ');
-	return (n);
-}
-
 int	ft_test(const char *str, ...)
 {
 	va_list	params;

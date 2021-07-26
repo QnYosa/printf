@@ -1,21 +1,29 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct_flags_display.c                             :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/25 19:09:23 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/25 19:51:18 by dyoula           ###   ########.fr       */
+/*   Created: 2021/06/28 16:04:56 by dyoula            #+#    #+#             */
+/*   Updated: 2021/07/24 15:36:42 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	struct_flags_display_maestro(container *box)
+int 	count_width(char *str)
 {
-	if (box->plus == 1 && box->number >= 0)
-		ft_putchar('+');
-	if (box->space == 1 && box->plus == 0 && box->number >= 0)
+	int	n;
+	int	i;
+
+	n = 0;
+	i = -1;
+	if (*str == '0')
+		str++;
+	n = ft_atoi (&str);
+	while (++i < n)
 		ft_putchar(' ');
+	return (n);
 }

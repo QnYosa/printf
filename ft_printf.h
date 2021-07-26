@@ -45,7 +45,9 @@ typedef struct caracteristics
 	//----------------------specifier-------------------------------
 	char					spec;
 	int 					printed; // nombre de bytes
-	long int				copy;
+	long long int			number;
+	char					*string;
+	char					caracter;
 	va_list					params;
 }	container;
 
@@ -62,8 +64,7 @@ void width_maestro(char **str, container *box);
 //precision
 //display
 int		ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnstr(char *str, int i);
+void	ft_putnstr(char *str, int n);
 void	ft_putnbr(int n);
 void	ft_putnbr_u(unsigned int n);
 void	ft_print_address(unsigned long int n);
