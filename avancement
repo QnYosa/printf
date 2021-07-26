@@ -15,7 +15,7 @@
 					Si 0 et - apparaissent, 0 est ignoré.
 Si 0 est spécifié pour un format d’entier ( i , u , x , X , o , d )
 et qu’une spécification de précision est également présente
-(par exemple,), %04.d 0 est ignoré. 
+(par exemple,), %04.d 0 est ignoré.
 ---------------------WIDTH & DESCRIPTION---------------------
 (number) ok
 * (struct ok reste a gerer les va_arg)
@@ -38,7 +38,7 @@ I
 L
 
 --------------------------SPECIFIER--------------------------
-c 				ok
+c 				ok ok
 d or I			ok
 e (bonus)
 E
@@ -46,7 +46,7 @@ f (bonus)
 g
 G 
 o octal			ok
-s 				ok
+s 				ok ok
 u 				ok
 x				ok
 X 				b

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/25 20:01:21 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/26 15:54:41 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct caracteristics
 	//----------------------specifier-------------------------------
 	char					spec;
 	int 					printed; // nombre de bytes
-	long long int			number;
+	void					number;
 	char					*string;
 	char					caracter;
 	va_list					params;
