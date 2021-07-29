@@ -2,6 +2,7 @@ SRCS	= ft_printf.c counters.c flags.c len.c octal.c parsing.c \
 		precision.c spec.c specifier_display.c \
 		specifier_display2.c struct_flags_display.c \
 		struct_width_display.c utils.c width.c \
+		main.c
 
 OBJS	= ${SRCS:.c=.o}
 
@@ -28,7 +29,7 @@ clean:
 
 fclean:		clean
 			${RM} ${NAME}
-	
+
 re:			fclean all
 
 .PHONY:		all clean fclean re

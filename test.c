@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 01:24:48 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/25 20:32:59 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 20:01:11 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	main (void)
 	printf("--------------PRECISION---------------\n");
 	printf("9 %.*d\n", nu, n);//data argument not used by format string
 	printf("9 %.11d\n", n);//		9 02147483647%
+	printf("% 100.3d", 45);
 	/*
 	printf("7 %0100.25d\n", n); //on ne tronque pas int  on ajoute des zero devant si
 	//precision > width nbr.  

@@ -6,11 +6,12 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/28 16:34:12 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 19:49:01 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 void ft_init_box(t_container *box)
 {
 	box->minus = 0;
@@ -32,38 +33,36 @@ void ft_init_box(t_container *box)
 
 void	ft_maestro(const char **str, t_container *box)
 {
-	while (*str)
+	while (**str)
 	{
-		if (**str != '%')
+		if (**str == '%')
+			box->percent = 1;
+		else if (**str != '%' && box->percent == 1)
 		{
-			box->printed += ft_putchar(**str);
+			//box->printed += ft_putchar(**str);
 			flags_maestro(str, box);
-			width_maestro(str, box);
-			precision_maestro(str, box);
-		
+			//width_maestro(str, box);
+			//precision_maestro(str, box);
+			spec_maestro(str, box);
 		}
+		else
+			ft_putchar((char)**str);
+		(*str)++;
 	}
-	va_arg(box->params, char *);
+	//va_arg(box->params, char *);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	t_container	box;
 
-	ft_init_box(&box);
 	va_start(box.params, str);
-	va_arg(box.params, char *);
+	ft_init_box(&box);
+	//va_arg(box.params, char *);
 	if (*str)
 		ft_maestro(&str, &box);
+	else
+		return (0);
 	va_end(box.params);
 	return (box.printed);
 }
-
-int	main(void)
-{
-	char no[] = "667677";
-	char u[] = "gui";
-	char str [] = "divvod jpv";
-	ft_printf("sakut", str, no, u);
-}
-// return le nombre de caracteres imprimes sans compter l'octet nul.

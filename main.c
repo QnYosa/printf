@@ -1,10 +1,11 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include "printf.h"
+
+int	ft_printf(const char *str, ...);
 
 int main ()
 {
-	char	lord [] = "lord";
-	int	n = 5;
-	const char	hola[] = "%p forgive me %d";
-	printf(hola, lord, n);
+	//int n = 45;
+	ft_printf("%d", 52);
 }

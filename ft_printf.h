@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/29 16:41:51 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 17:15:07 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_t_container
 	int						zero; //if 0 else ' ' (seulement sur la gauche)
 	int						steps; //(nombre de space) - (len du int) if int trop grand tout print;
 	int						diez;
+	int						percent;
 	
 	//-------------------precision && width------------------------- 
 	int						len; // taille de l'argument pour precision et width.
@@ -71,7 +72,9 @@ void	ft_putnbr(int n);
 void	ft_putnbr_u(unsigned int n);
 void	ft_print_address(unsigned long int n);
 void	ft_print_hexa(unsigned long int n);
+// maestro
 void	struct_disp_maestro(t_container *box);
+void	spec_maestro(const char **str, t_container *box);
 
 //utils
 int     ft_atoi(const char **str);

@@ -41,8 +41,9 @@ int	ft_test(const char *str, ...)
 	va_end(params);
 	return (0);
 }
-*/
 int	main (void)
 {
 	printf("%d", plus_width("+", 4));
 }
+
+*/
