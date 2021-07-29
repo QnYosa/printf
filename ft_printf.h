@@ -6,12 +6,12 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/26 15:54:41 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 16:41:51 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINT_F
-# define FT_PRINT_F
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # define	UPPER_HEX	"0123456789ABCDEF"
 # define	LOWER_HEX	"0123456789abcdef"
@@ -22,7 +22,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 
-typedef struct caracteristics
+typedef struct s_t_container
 {
 	//-------------------flags------------------------------------- 
 	int						minus;
@@ -45,23 +45,25 @@ typedef struct caracteristics
 	//----------------------specifier-------------------------------
 	char					spec;
 	int 					printed; // nombre de bytes
-	void					number;
+	int						number;
 	char					*string;
 	char					caracter;
 	va_list					params;
-}	container;
+}	t_container;
 
 //flags
-void	flags_maestro(char **str, container *box);
-int		is_flag_(char c, char **str, container *box);
-void	flag_struct_fill(char c, container *box);
-int		plus(char *str, int va_arg);
+void	flags_maestro(const char **str, t_container *box);
+int		is_flag_(char c, const char **str, t_container *box);
+void	flag_struct_fill(char c, t_container *box);
+int		plus(const char *str, int va_arg);
+int		count_width(const char **str);
 
 //width
-void width_maestro(char **str, container *box);
-
+void width_maestro(const char **str, t_container *box);
 
 //precision
+void	precision_maestro(const char **str, t_container *box);
+
 //display
 int		ft_putchar(char c);
 void	ft_putnstr(char *str, int n);
@@ -69,9 +71,11 @@ void	ft_putnbr(int n);
 void	ft_putnbr_u(unsigned int n);
 void	ft_print_address(unsigned long int n);
 void	ft_print_hexa(unsigned long int n);
+void	struct_disp_maestro(t_container *box);
+
 //utils
-int     ft_atoi(char **str);
-int		ft_strlen(char *str);
-char	*ft_strdup(char *str);
+int     ft_atoi(const char **str);
+int		ft_strlen(const char *str);
+char	*ft_strdup(const char *str);
 
 #endif

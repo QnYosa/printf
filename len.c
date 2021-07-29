@@ -6,9 +6,11 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/21 19:00:57 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 16:08:46 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	size_int(int n)
 {
@@ -31,16 +33,17 @@ int	size_int(int n)
 }
 
 // compte la longueur du nbr
-int	count_width(char *str)
+int	count_width(const char **str)
 {
 	int	n;
 	int	i;
 
 	n = 0;
 	i = -1;
-	if (*str == '0')
+	if (**str == '0')
 		str++;
 	n = ft_atoi (str);
+/*
 	while (++i < n)
 	{
 		if ()
@@ -48,5 +51,6 @@ int	count_width(char *str)
 		else
 
 	}
+*/
 	return (n);
 }

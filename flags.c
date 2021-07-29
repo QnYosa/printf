@@ -6,13 +6,13 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:04:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 15:36:42 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/28 16:58:49 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	flag_struct_fill(char c, container *box)
+void	flag_struct_fill(char c, t_container *box)
 {
 	if (c == '-')
 		box->minus = 1;
@@ -26,10 +26,10 @@ void	flag_struct_fill(char c, container *box)
 		box->diez = 1;
 }
 
-int	is_flag_(char c, char **str, container *box)
+int	is_flag_(char c, const char **str, t_container *box)
 {
 	const char	flags [] = "-+ #0";
-	char		*list;
+	const char		*list;
 
 	list = flags;
 	while (*list)
@@ -45,7 +45,7 @@ int	is_flag_(char c, char **str, container *box)
 	return (0);
 }
 
-int	plus(char *str, int va_arg)
+int	plus(const char *str, int va_arg)
 {
 	int	i;
 
@@ -55,7 +55,7 @@ int	plus(char *str, int va_arg)
 	if (*str == '+' && va_arg >= 0)
 	{
 		i++;
-		ft_putchar("+");
+		ft_putchar('+');
 	}
 	else if (*str == '+' && *str + 1 == '-')
 	{
@@ -91,8 +91,8 @@ int	space(char *str, int va_arg)
 	return (i);
 }
 
-void	flags_maestro(char **str, container *box)
+void	flags_maestro(const char **str, t_container *box)
 {
-	while (is_flag_(**str, box))
-		flag_struct_fill(**str, *str, box);
+	while (is_flag_(**str, str, box))
+		flag_struct_fill(**str, box);
 }

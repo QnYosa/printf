@@ -13,16 +13,16 @@
 
 #include "ft_printf.h"
 
-int 	count_width(char *str)
+int 	count_width(const char **str)
 {
 	int	n;
 	int	i;
 
 	n = 0;
 	i = -1;
-	if (*str == '0')
+	if (**str == '0')
 		str++;
-	n = ft_atoi (&str);
+	n = ft_atoi (str);
 	while (++i < n)
 		ft_putchar(' ');
 	return (n);

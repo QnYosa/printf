@@ -6,18 +6,18 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/26 15:53:23 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 16:24:45 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	spec_struct_attribution(char c, container *box)
+int	spec_struct_attribution(char c, t_container *box)
 {
 	if (c == 'c')
-		box->caracter = va_arg(box->params, char);
+		box->caracter = va_arg(box->params, int);
 	if (c == 's')
-		box->caracter = va_arg(box->params, char *);
+		box->string = va_arg(box->params, char *);
 	if (c == 'd' || c == 'i')
 		box->number = va_arg(box->params, int);
 	if (c == 'o' || c == 'u' || c == 'x' || c == 'X')
@@ -27,29 +27,28 @@ int	spec_struct_attribution(char c, container *box)
 	return (0);
 }
 
-int	spec_struct_fill(char c, container *box)
+int	spec_struct_fill(char c, t_container *box)
 {
-	const char	spec [] = "cspdiuxX";
-	char		*list;
+	char *spec;
 
-	list = spec;
-	while (*list)
+	spec = ft_strdup("cspdiuxX");
+	while (*spec)
 	{
-		if (*list == c)
+		if (*spec == c)
 		{
 			if (c == 'c' || c == 's')
 			{
 				box->letters = 1;
 			}
-			box->spec == *list;
+			box->spec = *spec;
 			return (1);
 		}
-		list++;
+		spec++;
 	}
 	return (0);
 }
 
-void	spec_maestro(char **str, container *box)
+void	spec_maestro(const char **str, t_container *box)
 {
-	spec_struct_fill_l(str, container box);
+	spec_struct_fill(**str, box);
 }

@@ -6,13 +6,13 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 06:32:49 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/24 16:45:13 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/29 16:50:50 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-int	ft_atoi(char **str)
+int	ft_atoi(const char **str)
 {
 	int			sign;	
 	long long	number;
@@ -37,7 +37,7 @@ int	ft_atoi(char **str)
 	return ((number * sign));
 }
 
-char	*ft_strdup(char *str)
+char	*ft_strdup(const char *str)
 {
 	int		i;
 	char	*n_str;
