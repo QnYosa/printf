@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/29 17:15:07 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 17:42:08 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,14 @@ typedef struct s_t_container
 
 	// -------------------- precision ------------------------------
 	unsigned int			precision;
+	int						precision_found;
 
 	//----------------------specifier-------------------------------
 	char					spec;
 	int 					printed; // nombre de bytes
 	int						number;
+	unsigned long int		uli;
+	unsigned int			ui;
 	char					*string;
 	char					caracter;
 	va_list					params;
