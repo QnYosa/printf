@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/29 19:54:01 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 18:29:59 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	spec_struct_attribution(char c, t_container *box)
 {
-	printf("%c", box->spec);
 	if (c == 'c')
 		box->caracter = va_arg(box->params, int);
 	if (c == 's')
@@ -22,10 +21,9 @@ int	spec_struct_attribution(char c, t_container *box)
 	if (c == 'd' || c == 'i')
 		box->number = va_arg(box->params, int);
 	if (c == 'o' || c == 'u' || c == 'x' || c == 'X')
-		box->number = va_arg(box->params, unsigned int);
+		box->ui = va_arg(box->params, unsigned int);
 	if (c == 'p')
-		box->number = va_arg(box->params, unsigned long int);
-	//printf("hello %d \n", box->number);
+		box->uli = va_arg(box->params, unsigned long int);
 	return (0);
 }
 
@@ -34,14 +32,19 @@ void spec_display(t_container *box)
 	if (box->spec == 'c')
 		ft_putchar(box->caracter);
 	if (box->spec == 's')
-		ft_putnstr(box->string, box->precision);
+	{
+		if (box->precision_found == 1)
+			ft_putnstr(box->string, box->precision);
+		else
+			ft_putnstr(box->string, ft_strlen(box->string));
+	}
 	if (box->spec == 'd' || box->spec == 'i')
 		ft_putnbr(box->number);
 	if (box->spec == 'o' || box->spec == 'u' || box->spec == 'x'
 		|| box->spec == 'X')
-		ft_putnbr_u(box->number);
+		ft_putnbr_u(box->ui);
 	if (box->spec == 'p')
-		ft_print_hexa(box->number);
+		ft_print_address(box->uli);
 }
 
 int	spec_struct_fill(char c, t_container *box)
@@ -70,5 +73,7 @@ void	spec_maestro(const char **str, t_container *box)
 	spec_struct_fill(**str, box);
 	spec_struct_attribution(box->spec, box);
 	//printf("%d\n", box->number);
+	
 	spec_display(box);
+//	*(*str++);
 }
