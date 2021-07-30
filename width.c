@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/23 19:18:21 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/28 16:35:37 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 20:37:31 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@
 void	check_ast(const char **str, t_container *box)
 {
 	if (**str == '*')
+	{
 		(*str)++;
-	box->width = va_arg(box->params, int);
+		box->width = va_arg(box->params, int);	
+	}
 }
 
 void	width_maestro(const char **str, t_container *box)

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:16:12 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/29 16:43:35 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 20:42:15 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,15 @@ void	print_width(t_container *box)
 	// les zeros deviennent des espaces.
 	i = -1;
 	if (box->zero == 0)
+	{
 		while (++i < box->width)
 			ft_putchar(' ');
-	else if (box->zero == 1)
-		while (++i < box-> width)
-			ft_putchar('0');
+	}
+	else if (box->zero == 1 && box->letters == 0)
+	{
+		while (++i < box->width)
+			ft_putchar('0');		
+	}
 }
 
 void	print_precision_l(t_container *box)
@@ -49,10 +53,12 @@ void		struct_disp_maestro(t_container *box)
 {
 	if (box->minus == 0)
 		print_width(box);
+		/*
 	if (box->letters == '1')
 		print_precision_l(box);
 	else
 		print_precision_number(box);
 	if (box->minus == 1)
 		print_width(box);
+		*/
 }

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 18:28:52 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 20:49:50 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,14 @@ void	ft_maestro(const char **str, t_container *box)
 			flags_maestro(str, box);
 			width_maestro(str, box);
 			precision_maestro(str, box);
+			struct_disp_maestro(box);
 			spec_maestro(str, box);
 		}
 		else
+		{
 			box->printed = ft_putchar((char)**str);
-		(*str)++;
+		}
+			(*str)++;
 	}
 }
 

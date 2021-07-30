@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 06:32:49 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/29 16:50:50 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 20:31:53 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_atoi(const char **str)
 
 	sign = 1;
 	number = 0;
-	while (**str >= '0' && **str <= '9')
+	while (**str >= '0' && **str <= '9' && **str)
 	{
 		number = number * 10 + (**str - '0');
 		(*str)++;

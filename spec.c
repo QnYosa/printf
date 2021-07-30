@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 18:29:59 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 20:02:09 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	spec_maestro(const char **str, t_container *box)
 	spec_struct_fill(**str, box);
 	spec_struct_attribution(box->spec, box);
 	//printf("%d\n", box->number);
-	
 	spec_display(box);
-//	*(*str++);
+	//(*str)++;
 }
