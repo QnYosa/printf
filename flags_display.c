@@ -6,10 +6,14 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:30:38 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 19:32:13 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:51:47 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	print_flags(t_container *box);
+void	print_flags(t_container *box)
+{
+	if (box->plus == 1 && (box->number > 0)
+		box->printed += ft_putchar('+');
+}
