@@ -93,6 +93,6 @@ int	space(char *str, int va_arg)
 
 void	flags_maestro(char **str, container *box)
 {
-	while (is_flag_(**str, box))
-		flag_struct_fill(**str, *str, box);
+	while (is_flag_(**str, *str, box))
+		flag_struct_fill(**str, box);
 }

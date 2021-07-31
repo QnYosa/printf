@@ -1,10 +1,15 @@
 #include <stdarg.h>
 #include <stdio.h>
+int plus(int n)
+{
+	return (n + 3);
+}
 
 int main ()
 {
-	char	lord [] = "lord";
-	int	n = 5;
-	const char	hola[] = "%p forgive me %d";
-	printf(hola, lord, n);
+	void	*number;
+	int 	n = 4;
+
+	number = plus(n);
+	printf("%d", number);
 }

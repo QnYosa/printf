@@ -45,7 +45,7 @@ typedef struct caracteristics
 	//----------------------specifier-------------------------------
 	char					spec;
 	int 					printed; // nombre de bytes
-	void					number;
+	void					*number;
 	char					*string;
 	char					caracter;
 	va_list					params;

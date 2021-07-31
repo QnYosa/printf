@@ -51,5 +51,5 @@ int	spec_struct_fill(char c, container *box)
 
 void	spec_maestro(char **str, container *box)
 {
-	spec_struct_fill_l(str, container box);
+	spec_struct_fill_l(str, box);
 }
