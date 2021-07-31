@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 20:02:09 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 18:54:38 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	spec_struct_attribution(char c, t_container *box)
 	return (0);
 }
 
-void spec_display(t_container *box)
+void	spec_display(t_container *box)
 {
 	if (box->spec == 'c')
 		ft_putchar(box->caracter);
@@ -72,7 +72,9 @@ void	spec_maestro(const char **str, t_container *box)
 {
 	spec_struct_fill(**str, box);
 	spec_struct_attribution(box->spec, box);
-	//printf("%d\n", box->number);
+	if (box->precision_found == 1 && box->precision > size_int(box->number)
+		&& box->letters == 0)
+		print_precision_maestro(box);
 	spec_display(box);
-	//(*str)++;
+	//printf("hola %c\n", **str);
 }

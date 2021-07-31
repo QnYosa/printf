@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   len.c                                              :+:      :+:    :+:   */
+/*   precision_display.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 17:42:53 by dyoula           ###   ########.fr       */
+/*   Created: 2021/07/31 16:01:51 by dyoula            #+#    #+#             */
+/*   Updated: 2021/07/31 18:12:18 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	size_int(int n)
+void	print_precision_l(t_container *box)
 {
-	unsigned int	size;
-	int	div;
-	unsigned int cpy;
+	if (box->spec == 's')
+		ft_putnstr(box->string, box->precision);
+	if (box->spec == 'c')
+		ft_putchar(box->caracter);
+}
 
-	if (n < 0)
-		cpy = n * -1;
-	else
-		cpy = n;
-	size = 1;
-	div = 1;
-	while (cpy / div > 9)
+void	print_precision_number(t_container *box)
+{
+	unsigned int	i;
+	unsigned int	length;
+
+	length = size_int(box->number);
+	i = 0;
+	while (i < box->precision - length)
 	{
-		div *= 10;
-		size++;
+		ft_putchar('0');
+		i++;
 	}
-	return (size);
+}
+
+void	print_precision_maestro(t_container *box)
+{
+	print_precision_number(box);
 }

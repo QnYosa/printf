@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 17:42:08 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 17:41:48 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void width_maestro(const char **str, t_container *box);
 
 //precision
 void	precision_maestro(const char **str, t_container *box);
+void	print_precision_maestro(t_container *box);
 
 //display
 int		ft_putchar(char c);
@@ -80,8 +81,9 @@ void	struct_disp_maestro(t_container *box);
 void	spec_maestro(const char **str, t_container *box);
 
 //utils
-int     ft_atoi(const char **str);
-int		ft_strlen(const char *str);
-char	*ft_strdup(const char *str);
+int     			ft_atoi(const char **str);
+int					ft_strlen(const char *str);
+char				*ft_strdup(const char *str);
+unsigned int		size_int(int n);
 
 #endif

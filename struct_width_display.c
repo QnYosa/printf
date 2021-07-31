@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:16:12 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 20:42:15 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:00:12 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,10 @@ void	print_width(t_container *box)
 	else if (box->zero == 1 && box->letters == 0)
 	{
 		while (++i < box->width)
-			ft_putchar('0');		
+			ft_putchar('0');	
 	}
 }
 
-void	print_precision_l(t_container *box)
-{
-	if (box->spec == 's')
-		ft_putnstr(box->string, box->precision);
-	if (box->spec == 'c')
-		ft_putchar(box->caracter);
-}
-
-void	print_precision_number(t_container *box)
-{
-	unsigned int	i;
-	unsigned int	length;
-
-	length = count_width((const char **)box->string);
-	i = -1;
-	while (i++ <= box->precision - length)
-		ft_putchar('0');
-}
 
 void		struct_disp_maestro(t_container *box)
 {

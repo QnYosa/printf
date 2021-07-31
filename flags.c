@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:04:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 18:08:16 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 18:52:12 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ void	flags_maestro(const char **str, t_container *box)
 {
 	while (is_flag_(**str, str, box))
 	{
-		//printf("yo");
 		flag_struct_fill(**str, box);
 		(*str)++;
 	}

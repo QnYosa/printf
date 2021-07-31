@@ -6,11 +6,30 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/30 20:49:50 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 18:54:20 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void ft_re_init_box(t_container *box)
+{
+	box->minus = 0;
+	box->plus = 0;
+	box->space = 0;
+	box->zero = 0;
+	box->steps = 0;
+	box->diez = 0;
+	box->len = 0;
+	box->letters = 0;
+	box->width = 0;
+	box->precision = 0;
+	box->spec = 0;
+	box->number = 0;
+	box->string = NULL;
+	box->caracter = 0;
+	box->percent = 0;
+}
 
 void ft_init_box(t_container *box)
 {
@@ -29,6 +48,7 @@ void ft_init_box(t_container *box)
 	box->number = 0;
 	box->string = NULL;
 	box->caracter = 0;
+	box->percent = 0;
 }
 
 void	ft_maestro(const char **str, t_container *box)
@@ -45,12 +65,13 @@ void	ft_maestro(const char **str, t_container *box)
 			precision_maestro(str, box);
 			struct_disp_maestro(box);
 			spec_maestro(str, box);
+			ft_re_init_box(box);
 		}
 		else
 		{
 			box->printed = ft_putchar((char)**str);
 		}
-			(*str)++;
+		(*str)++;
 	}
 }
 
