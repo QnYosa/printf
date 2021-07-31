@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:16:12 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 19:00:12 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:37:54 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	print_width(t_container *box)
 			ft_putchar('0');	
 	}
 }
-
 
 void		struct_disp_maestro(t_container *box)
 {

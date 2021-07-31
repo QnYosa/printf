@@ -6,13 +6,13 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 18:54:20 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:31:24 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_re_init_box(t_container *box)
+void	ft_re_init_box(t_container *box)
 {
 	box->minus = 0;
 	box->plus = 0;
@@ -31,7 +31,7 @@ void ft_re_init_box(t_container *box)
 	box->percent = 0;
 }
 
-void ft_init_box(t_container *box)
+void	ft_init_box(t_container *box)
 {
 	box->minus = 0;
 	box->plus = 0;
@@ -59,7 +59,6 @@ void	ft_maestro(const char **str, t_container *box)
 			box->percent = 1;
 		else if (**str != '%' && box->percent == 1)
 		{
-			//box->printed += ft_putchar(**str);
 			flags_maestro(str, box);
 			width_maestro(str, box);
 			precision_maestro(str, box);

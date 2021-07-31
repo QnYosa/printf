@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 16:01:51 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 18:12:18 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:10:55 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	print_precision_l(t_container *box)
 	if (box->spec == 's')
 		ft_putnstr(box->string, box->precision);
 	if (box->spec == 'c')
-		ft_putchar(box->caracter);
+		box->printed += ft_putchar(box->caracter);
 }
 
 void	print_precision_number(t_container *box)
@@ -29,7 +29,7 @@ void	print_precision_number(t_container *box)
 	i = 0;
 	while (i < box->precision - length)
 	{
-		ft_putchar('0');
+		box->printed += ft_putchar('0');
 		i++;
 	}
 }

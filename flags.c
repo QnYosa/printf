@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 16:04:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 18:52:12 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:37:13 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	flag_struct_fill(char c, t_container *box)
 int	is_flag_(char c, const char **str, t_container *box)
 {
 	const char	flags [] = "-+ #0";
-	const char		*list;
+	const char	*list;
 
 	list = flags;
 	while (*list)

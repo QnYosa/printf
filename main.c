@@ -6,7 +6,7 @@ int	ft_printf(const char *str, ...);
 
 int main ()
 {
-	ft_printf("haha%s, %.4d", "yondu", 9);
+	printf("%d", ft_printf("haha %10.3s, %+d le boss", "yondu", 9));
 	//printf("hola salut %45.1s\n", "yosemite");
 	//ft_printf("%010d", 9);
 

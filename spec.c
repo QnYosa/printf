@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 18:54:38 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:35:03 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	spec_display(t_container *box)
 
 int	spec_struct_fill(char c, t_container *box)
 {
-	char *spec;
+	char	*spec;
 
 	spec = ft_strdup("cspdiuxX");
 	while (*spec)
@@ -76,5 +76,4 @@ void	spec_maestro(const char **str, t_container *box)
 		&& box->letters == 0)
 		print_precision_maestro(box);
 	spec_display(box);
-	//printf("hola %c\n", **str);
 }

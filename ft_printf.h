@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 17:41:48 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:30:25 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,29 +24,24 @@
 
 typedef struct s_t_container
 {
-	//-------------------flags------------------------------------- 
 	int						minus;
 	int 					plus;
 	int 					space;
-	int						zero; //if 0 else ' ' (seulement sur la gauche)
+	int						zero;
 	int						steps; //(nombre de space) - (len du int) if int trop grand tout print;
 	int						diez;
 	int						percent;
 	
-	//-------------------precision && width------------------------- 
 	int						len; // taille de l'argument pour precision et width.
 	int 					letters; // si c'est des nu ou des lettres qu'on manipule. 
 
-	//--------------------- width ---------------------------------
 	unsigned int 			width; // ok
 
-	// -------------------- precision ------------------------------
 	unsigned int			precision;
 	int						precision_found;
 
-	//----------------------specifier-------------------------------
 	char					spec;
-	int 					printed; // nombre de bytes
+	int 					printed;
 	int						number;
 	unsigned long int		uli;
 	unsigned int			ui;
@@ -60,7 +55,7 @@ void	flags_maestro(const char **str, t_container *box);
 int		is_flag_(char c, const char **str, t_container *box);
 void	flag_struct_fill(char c, t_container *box);
 int		plus(const char *str, int va_arg);
-int		count_width(const char **str);
+int		count_width(const char **str, t_container *box);
 
 //width
 void width_maestro(const char **str, t_container *box);
