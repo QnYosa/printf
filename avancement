@@ -9,9 +9,9 @@
 ----------------------------FLAGS----------------------------
 - justify content
 + (bonus)			ok
-(space)(bonus) 		
+(space)(bonus) 		ok
 #(bonus)
-0 fout des zeros.
+0 fout des zeros. ok
 					Si 0 et - apparaissent, 0 est ignoré.
 Si 0 est spécifié pour un format d’entier ( i , u , x , X , o , d )
 et qu’une spécification de précision est également présente
@@ -39,8 +39,7 @@ L
 
 --------------------------SPECIFIER--------------------------
 c 				ok ok
-d or I			ok
-e (bonus)
+d or I			ok ok
 E
 f (bonus)
 g
@@ -50,5 +49,5 @@ s 				ok ok
 u 				ok
 x				ok
 X 				b
-p 				ok
+p 				ok ok 
 n (bonus)

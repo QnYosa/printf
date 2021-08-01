@@ -10,7 +10,7 @@ NAME	= ft_printf.a
 
 AR		= ar rcs
 
-CFLAGS	= -Wall -Werror -Wextra 
+CFLAGS	= -Wall -Werror -Wextra
 CC		= gcc
 
 RM		= rm -f

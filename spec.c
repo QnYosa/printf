@@ -40,9 +40,10 @@ void	spec_display(t_container *box)
 	}
 	if (box->spec == 'd' || box->spec == 'i')
 		ft_putnbr(box->number, box);
-	if (box->spec == 'o' || box->spec == 'u' || box->spec == 'x'
-		|| box->spec == 'X')
+	if (box->spec == 'u')
 		ft_putnbr_u(box->ui, box);
+	if (box->spec == 'o' || box->spec == 'x' || box->spec == 'X')
+		ft_putnbr_base(box->ui, box);
 	if (box->spec == 'p')
 		ft_print_address(box->uli);
 }
@@ -51,7 +52,7 @@ int	spec_struct_fill(char c, t_container *box)
 {
 	char	*spec;
 
-	spec = ft_strdup("cspdiuxX");
+	spec = ft_strdup("cspdiuxXo");
 	while (*spec)
 	{
 		if (*spec == c)

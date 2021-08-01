@@ -24,22 +24,34 @@ void	ft_print_hexa(unsigned long int n)
 		ft_print_hexa(n % 16);
 	}
 }
-
-void	ft_print_h(long int n)
+char *base_maker(t_container *box)
 {
-	static char	base[] = "0123456789abcdef";
+	char *base;
+	if (box->spec == 'x')
+		base = ft_strdup("0123456789abcdef");
+	if (box->spec == 'X')
+		base = ft_strdup("0123456789ABCDEF");
+	if (box->spec == 'o')
+		base = ft_strdup("01234567");
+	return (base);
+}
 
+void	ft_putnbr_base(unsigned int n, t_container *box)
+{
+	char	*base;
+
+	base = base_maker(box);
 	if (n < 0)
 	{
 		n *= -1;
 		write(1, "-", 1);
 	}
-	if (n <= 16 && n >= 0)
+	if (n <= (unsigned int)ft_strlen(base) && n >= 0)
 		ft_putchar(base[n]);
 	else
 	{
-		ft_print_address(n / 16);
-		ft_print_address(n % 16);
+		ft_putnbr_base(n / ft_strlen(base), box);
+		ft_putnbr_base(n % ft_strlen(base), box);
 	}
 }
 
@@ -49,15 +61,3 @@ void	ft_print_address(unsigned long int n)
 	ft_putchar('x');
 	ft_print_hexa(n);
 }
-
-	/*
-int	main(void)
-{
-	int		a[2] = {1, 2};
-	void	*ptr;
-
-	ptr = &a;
-	ft_print_address((unsigned long int)ptr);
-	//ft_putnbr(-01010);
-}
-	*/
