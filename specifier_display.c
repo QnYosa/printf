@@ -16,10 +16,13 @@ void	ft_putnstr(char *str, int n)
 
 	i = -1;
 	while (++i < n && *str)
+	{
 		ft_putchar(*str);
+		str++;
+	}
 }
-
-void	ft_putnstr(char *str, int i)
+/*
+void	ft_putnstr(const char *str, int i)
 {
 	while (*str && i > 0)
 	{
@@ -28,6 +31,7 @@ void	ft_putnstr(char *str, int i)
 		str++;
 	}
 }
+*/
 
 void	ft_putnbr(int n)
 {

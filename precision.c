@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:51:23 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/25 19:32:39 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/30 17:48:13 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,32 @@
 **
 **/
 
-void	asterix(char **str, container *box)
+void	asterix(const char **str, t_container *box)
 {
 	if (**str == '*')
+	{
 		(*str)++;
-	box->precision = va_arg(box->params, int));
+		box->precision = va_arg(box->params, int);
+	}
 }
 
-void	precision_struct_fill(char **str, container *box)
+void	precision_struct_fill(const char **str, t_container *box)
 {
 	asterix(str, box);
 	box->precision = ft_atoi(str);
 	asterix(str, box);
 }
 
-void	precision_maestro(char **str, container *box)
+void	precision_maestro(const char **str, t_container *box)
 {
 	if (**str == '.')
+	{
 		(*str)++;
-	precision_struct_fill(str, box);
+		precision_struct_fill(str, box);
+		box->precision_found = 1;
+	}
+	else
+		box->precision_found = 0;
 }
 
 //ALGO FUNCIONAL MAIS PRECISO FAZER A GESTIAO DAS LIMITAS  EX VARIAS '**'
@@ -47,7 +54,7 @@ void	precision_maestro(char **str, container *box)
 int	main(void)
 {
 	char		*s;
-	container	box;
+	t_container	box;
 
 	s = ft_strdup(".45*d");
 	precision_maestro(&s, &box);

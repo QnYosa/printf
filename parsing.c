@@ -22,7 +22,7 @@ int	plus_width(char *str, int va_arg)
 		return (0);
 	return (i);
 }
-
+/*
 int	ft_test(const char *str, ...)
 {
 	va_list	params;
@@ -34,15 +34,16 @@ int	ft_test(const char *str, ...)
 	s1 = (char *)str;
 	while (1 && s1 != NULL)
 	{
-		ft_putstr(s1);
+		ft_putnstr(s1);
 		write(1, "\n", 1);
 		s1 = va_arg(params, char *);
 	}
 	va_end(params);
 	return (0);
 }
-
 int	main (void)
 {
 	printf("%d", plus_width("+", 4));
 }
+
+*/

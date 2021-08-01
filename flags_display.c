@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   len.c                                              :+:      :+:    :+:   */
+/*   flags_display.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 19:32:40 by dyoula           ###   ########.fr       */
+/*   Created: 2021/07/30 18:30:38 by dyoula            #+#    #+#             */
+/*   Updated: 2021/07/31 19:51:47 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	size_int(int n)
+void	print_flags(t_container *box)
 {
-	unsigned int	size;
-	int				div;
-	unsigned int 	cpy;
-
-	if (n < 0)
-		cpy = n * -1;
-	else
-		cpy = n;
-	size = 1;
-	div = 1;
-	while (cpy / div > 9)
-	{
-		div *= 10;
-		size++;
-	}
-	return (size);
+	if (box->plus == 1 && (box->number > 0 || box->ui > 0 ||
+		box->uli > 0) && (box->spec == 'd' || box->spec == 'i'))
+		box->printed += ft_putchar('+');
+	else if (box->space == 1 && (box->number > 0 || box->ui > 0 ||
+		box->uli > 0) && (box->spec == 'd' || box->spec == 'i')
+		&& box->plus == 0)
+		box->printed += ft_putchar(' ');
 }

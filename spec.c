@@ -6,50 +6,76 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/26 15:53:23 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/07/31 19:35:03 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	spec_struct_attribution(char c, container *box)
+int	spec_struct_attribution(char c, t_container *box)
 {
 	if (c == 'c')
-		box->caracter = va_arg(box->params, char);
+		box->caracter = va_arg(box->params, int);
 	if (c == 's')
-		box->caracter = va_arg(box->params, char *);
+		box->string = va_arg(box->params, char *);
 	if (c == 'd' || c == 'i')
 		box->number = va_arg(box->params, int);
 	if (c == 'o' || c == 'u' || c == 'x' || c == 'X')
-		box->number = va_arg(box->params, unsigned int);
+		box->ui = va_arg(box->params, unsigned int);
 	if (c == 'p')
-		box->number = va_arg(box->params, unsigned long int);
+		box->uli = va_arg(box->params, unsigned long int);
 	return (0);
 }
 
-int	spec_struct_fill(char c, container *box)
+void	spec_display(t_container *box)
 {
-	const char	spec [] = "cspdiuxX";
-	char		*list;
-
-	list = spec;
-	while (*list)
+	if (box->spec == 'c')
+		box->printed += ft_putchar(box->caracter);
+	if (box->spec == 's')
 	{
-		if (*list == c)
+		if (box->precision_found == 1)
+			ft_putnstr(box->string, box->precision);
+		else
+			ft_putnstr(box->string, ft_strlen(box->string));
+	}
+	if (box->spec == 'd' || box->spec == 'i')
+		ft_putnbr(box->number);
+	if (box->spec == 'o' || box->spec == 'u' || box->spec == 'x'
+		|| box->spec == 'X')
+		ft_putnbr_u(box->ui);
+	if (box->spec == 'p')
+		ft_print_address(box->uli);
+}
+
+int	spec_struct_fill(char c, t_container *box)
+{
+	char	*spec;
+
+	spec = ft_strdup("cspdiuxX");
+	while (*spec)
+	{
+		if (*spec == c)
 		{
 			if (c == 'c' || c == 's')
 			{
 				box->letters = 1;
 			}
-			box->spec == *list;
+			box->spec = *spec;
 			return (1);
 		}
-		list++;
+		spec++;
 	}
 	return (0);
 }
 
-void	spec_maestro(char **str, container *box)
+void	spec_maestro(const char **str, t_container *box)
 {
-	spec_struct_fill_l(str, box);
+	spec_struct_fill(**str, box);
+	spec_struct_attribution(box->spec, box);
+	print_flags(box);
+	struct_disp_maestro(box);
+	if (box->precision_found == 1 && box->precision > size_int(box->number)
+		&& box->letters == 0)
+		print_precision_maestro(box);
+	spec_display(box);
 }
