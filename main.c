@@ -9,9 +9,10 @@ int main ()
 	int *u;
 	int n = 45;
 	u = &n;
+	printf("%d\n", ft_printf("%s, %c %+d\n", "hola", 'c', 10));
 	//ft_printf("haha %10.3s, %+d le boss", "yondu", 9);
-	ft_printf("%*s\n", n, "salut");
-	printf("%10o\n", n);
+	printf("%d", printf("%s, %c %+d\n", "hola", 'c', 10));
+
 	//printf("% d\n", 9);
 	//ft_printf("%010d", 9);
 

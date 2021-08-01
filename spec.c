@@ -34,15 +34,15 @@ void	spec_display(t_container *box)
 	if (box->spec == 's')
 	{
 		if (box->precision_found == 1)
-			ft_putnstr(box->string, box->precision);
+			box->printed += ft_putnstr(box->string, box->precision);
 		else
-			ft_putnstr(box->string, ft_strlen(box->string));
+			box->printed += ft_putnstr(box->string, ft_strlen(box->string));
 	}
 	if (box->spec == 'd' || box->spec == 'i')
-		ft_putnbr(box->number);
+		ft_putnbr(box->number, box);
 	if (box->spec == 'o' || box->spec == 'u' || box->spec == 'x'
 		|| box->spec == 'X')
-		ft_putnbr_u(box->ui);
+		ft_putnbr_u(box->ui, box);
 	if (box->spec == 'p')
 		ft_print_address(box->uli);
 }

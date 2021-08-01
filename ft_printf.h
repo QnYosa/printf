@@ -66,9 +66,9 @@ void	print_precision_maestro(t_container *box);
 
 //display
 int		ft_putchar(char c);
-void	ft_putnstr(char *str, int n);
-void	ft_putnbr(int n);
-void	ft_putnbr_u(unsigned int n);
+int		ft_putnstr(char *str, int n);
+void	ft_putnbr(int n, t_container *box);
+void	ft_putnbr_u(unsigned int n, t_container *box);
 void	ft_print_address(unsigned long int n);
 void	ft_print_hexa(unsigned long int n);
 // maestro

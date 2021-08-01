@@ -67,7 +67,7 @@ void	ft_maestro(const char **str, t_container *box)
 		}
 		else
 		{
-			box->printed = ft_putchar((char)**str);
+			box->printed += ft_putchar((char)**str);
 		}
 		(*str)++;
 	}
