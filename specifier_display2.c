@@ -44,10 +44,10 @@ void	ft_putnbr_base(unsigned int n, t_container *box)
 	if (n < 0)
 	{
 		n *= -1;
-		write(1, "-", 1);
+		box->printed += write(1, "-", 1);
 	}
 	if (n <= (unsigned int)ft_strlen(base) && n >= 0)
-		ft_putchar(base[n]);
+		box->printed += ft_putchar(base[n]);
 	else
 	{
 		ft_putnbr_base(n / ft_strlen(base), box);
