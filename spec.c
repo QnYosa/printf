@@ -45,7 +45,7 @@ void	spec_display(t_container *box)
 	if (box->spec == 'o' || box->spec == 'x' || box->spec == 'X')
 		ft_putnbr_base(box->ui, box);
 	if (box->spec == 'p')
-		ft_print_address(box->uli);
+		ft_print_address(box->uli, box);
 }
 
 int	spec_struct_fill(char c, t_container *box)

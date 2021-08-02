@@ -12,16 +12,16 @@
 
 #include "ft_printf.h"
 
-void	ft_print_hexa(unsigned long int n)
+void	ft_print_hexa(unsigned long int n, t_container *box)
 {
 	static char	base[] = "0123456789abcdef";
 
 	if (n <= 16 && n >= 0)
-		ft_putchar(base[n]);
+		box->printed += ft_putchar(base[n]);
 	else
 	{
-		ft_print_hexa(n / 16);
-		ft_print_hexa(n % 16);
+		ft_print_hexa(n / 16, box);
+		ft_print_hexa(n % 16, box);
 	}
 }
 char *base_maker(t_container *box)
@@ -55,9 +55,9 @@ void	ft_putnbr_base(unsigned int n, t_container *box)
 	}
 }
 
-void	ft_print_address(unsigned long int n)
+void	ft_print_address(unsigned long int n, t_container *box)
 {
-	ft_putchar('0');
-	ft_putchar('x');
-	ft_print_hexa(n);
+	box->printed += ft_putchar('0');
+	box->printed += ft_putchar('x');
+	ft_print_hexa(n, box);
 }
