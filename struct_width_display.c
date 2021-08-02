@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:16:12 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 15:53:37 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/02 19:14:17 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,25 @@ void	print_width(t_container *box)
 	{
 		while (i < box->width - box->len)
 		{
-			box->printed += ft_putchar('0');	
+			box->printed += ft_putchar('0');
 			i++;
 		}
 	}
 }
 
-void		struct_disp_maestro(t_container *box)
+void	struct_disp_maestro(t_container *box)
 {
-	if (box->minus == 0)
+	if (box->minus == 0 && (box->number > 0 || box->uli > 0) && box->zero == 0
+		&& box->width_found == 1)
 		print_width(box);
-		/*
+	if (box->minus == 0 && (box->number < 0 || box->uli < 0) && box->zero == 0
+		&& box->width_found == 1)
+	{
+		if (box->width > 0)
+			box->width -= 1;
+		print_width(box);
+	}
+/*
 	if (box->letters == '1')
 		print_precision_l(box);
 	else

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:08:13 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/09 17:47:51 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/02 17:55:15 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_hexa(unsigned long int n, t_container *box)
 {
-	static char	base[] = "0123456789abcdef";
+	static char	base[] = LOWER_HEX;
 
 	if (n <= 16 && n >= 0)
 		box->printed += ft_putchar(base[n]);
@@ -24,15 +24,17 @@ void	ft_print_hexa(unsigned long int n, t_container *box)
 		ft_print_hexa(n % 16, box);
 	}
 }
+
 char *base_maker(t_container *box)
 {
 	char *base;
+
 	if (box->spec == 'x')
-		base = ft_strdup("0123456789abcdef");
+		base = LOWER_HEX;
 	if (box->spec == 'X')
-		base = ft_strdup("0123456789ABCDEF");
+		base = UPPER_HEX;
 	if (box->spec == 'o')
-		base = ft_strdup("01234567");
+		base = OCTAL;
 	return (base);
 }
 

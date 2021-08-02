@@ -34,6 +34,11 @@ void	ft_putnbr(int n, t_container *box)
 	{
 		n *= -1;
 		box->printed += write(1, "-", 1);
+		if (box->zero == 1 && box->precision_found == 1)
+		{
+			box->width -= 1;
+			print_width(box);
+		}
 	}
 	c += n;
 	if (n <= 9 && n >= 0)

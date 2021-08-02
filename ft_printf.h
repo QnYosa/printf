@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 15:49:45 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/02 18:04:31 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define	UPPER_HEX	"0123456789ABCDEF"
 # define	LOWER_HEX	"0123456789abcdef"
 # define	OCTAL		"012345678"
+# define	FLAGS		"cspdiuxXo"
 
 # include <unistd.h>
 # include <stdio.h>
@@ -34,6 +35,7 @@ typedef struct s_t_container
 	unsigned int			len; // taille de l'argument pour precision et width.
 	int 					letters; // si c'est des nu ou des lettres qu'on manipule. 
 	unsigned int 			width; // ok
+	unsigned int			width_found;
 	unsigned int			precision;
 	int						precision_found;
 	char					spec;
@@ -47,6 +49,7 @@ typedef struct s_t_container
 }	t_container;
 
 //flags
+int	ft_printf(const char *str, ...);
 void				flags_maestro(const char **str, t_container *box);
 int					is_flag_(char c, const char **str, t_container *box);
 void				flag_struct_fill(char c, t_container *box);
@@ -55,7 +58,7 @@ int					count_width(const char **str, t_container *box);
 void				print_flags(t_container *box);
 //width
 void 				width_maestro(const char **str, t_container *box);
-
+void				print_width(t_container *box);
 //precision
 void				precision_maestro(const char **str, t_container *box);
 void				print_precision_maestro(t_container *box);

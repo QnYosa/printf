@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/07/31 19:35:03 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/02 17:51:04 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	spec_struct_fill(char c, t_container *box)
 {
 	char	*spec;
 
-	spec = ft_strdup("cspdiuxXo");
+	spec = FLAGS;
 	while (*spec)
 	{
 		if (*spec == c)

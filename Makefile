@@ -21,7 +21,10 @@ RM		= rm -f
 $(NAME):	${OBJS}
 			${AR} ${NAME} ${OBJS}
 
+
 all:		${NAME}
+
+bonus:		all
 
 clean:
 			${RM} ${OBJS}
@@ -31,4 +34,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

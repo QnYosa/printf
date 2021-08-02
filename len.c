@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 15:49:41 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/02 18:35:39 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ unsigned int	size_unsigned_long_int(unsigned long int)
 	return (size);
 }
 */
+
 unsigned int	size_unsigned_int(unsigned int n)
 {
 	unsigned int	size;
