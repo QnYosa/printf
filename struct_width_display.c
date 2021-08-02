@@ -14,19 +14,24 @@
 void	print_width(t_container *box)
 {
 	unsigned int	i;
-	//if box->zero == 1 et width > 0 et et precision superieure a taille du
-	//number
-	// les zeros deviennent des espaces.
-	i = -1;
+
+	i = 0;
 	if (box->zero == 0 && box->spec != 'p')
 	{
-		while (++i < box->width)
+		while (i < box->width)
+		{
 			box->printed += ft_putchar(' ');
+			//printf("%d\n",i);
+			i++;
+		}
 	}
 	else if (box->zero == 1 && box->letters == 0)
 	{
-		while (++i < box->width)
+		while (i < box->width)
+		{
 			box->printed += ft_putchar('0');	
+			i++;
+		}
 	}
 }
 

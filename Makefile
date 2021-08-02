@@ -1,4 +1,4 @@
-SRCS	= ft_printf.c counters.c flags.c len.c octal.c parsing.c \
+SRCS	= ft_printf.c counters.c flags.c len.c \
 		precision.c spec.c specifier_display.c \
 		specifier_display2.c struct_flags_display.c \
 		struct_width_display.c utils.c width.c \
@@ -6,7 +6,7 @@ SRCS	= ft_printf.c counters.c flags.c len.c octal.c parsing.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME	= ft_printf.a
+NAME	= libftprintf.a
 
 AR		= ar rcs
 
