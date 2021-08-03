@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 18:32:27 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/03 17:46:00 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,13 @@ void	ft_maestro(const char **str, t_container *box)
 {
 	while (**str)
 	{
-		if (**str == '%')
+		if (**str == '%' && box->percent == 0)
 			box->percent = 1;
+		else if (**str == '%' && box->percent == 1)
+		{
+			box->printed += write(1, "%%", 1);
+			ft_re_init_box(box);
+		}
 		else if (**str != '%' && box->percent == 1)
 		{
 			flags_maestro(str, box);

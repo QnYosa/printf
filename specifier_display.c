@@ -10,10 +10,25 @@ int	ft_putchar(char c)
 	return (bytes);
 }
 
-int 	ft_putnstr(char *str, int n)
+int ft_putnbr_int_limits(int n, t_container *box)
 {
-	int i;
-	int bytes;
+	if (n == 2147483647)
+	{
+		box->printed += write(1, "2147483647", 10);
+		return (1);
+	}
+	if (n == -2147483648)
+	{
+		box->printed += write(1, "-2147483648", 11);
+		return (1);
+	}
+	return (0);
+}
+
+int	ft_putnstr(char *str, int n)
+{
+	int	i;
+	int	bytes;
 
 	bytes = 0;
 	i = -1;
@@ -30,7 +45,9 @@ void	ft_putnbr(int n, t_container *box)
 	char	c;
 
 	c = '0';
-	if (n < 0)
+	if (ft_putnbr_int_limits(n, box))
+		return ;
+	else if (n < 0)
 	{
 		n *= -1;
 		box->printed += write(1, "-", 1);

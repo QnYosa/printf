@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 17:51:04 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/03 17:34:29 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	spec_struct_fill(char c, t_container *box)
 	{
 		if (*spec == c)
 		{
-			if (c == 'c' || c == 's')
+			if (c == 'c' || c == 's' || c == '%')
 			{
 				box->letters = 1;
 			}
