@@ -42,24 +42,22 @@ int	ft_putnstr(char *str, int n)
 
 void	ft_putnbr(int n, t_container *box)
 {
-	char	c;
-
-	c = '0';
 	if (ft_putnbr_int_limits(n, box))
 		return ;
 	else if (n < 0)
 	{
 		n *= -1;
 		box->printed += write(1, "-", 1);
+		if (box->number < 0 && box->precision > 1)
+			print_precision_maestro(box);
 		if (box->zero == 1 && box->precision_found == 1)
 		{
 			box->width -= 1;
 			print_width(box);
 		}
 	}
-	c += n;
 	if (n <= 9 && n >= 0)
-		box->printed += write(1, &c, 1);
+		box->printed += ft_putchar('0' + n);
 	else
 	{
 		ft_putnbr(n / 10, box);
@@ -69,17 +67,8 @@ void	ft_putnbr(int n, t_container *box)
 
 void	ft_putnbr_u(unsigned int n, t_container *box)
 {
-	char	c;
-
-	c = '0';
-	if (n < 0)
-	{
-		n *= 1;
-		box->printed += write(1, "-", 1);
-	}
-	c += n;
 	if (n <= 9 && n >= 0)
-		box->printed += write(1, &c, 1);
+		box->printed += ft_putchar('0' + n);
 	else
 	{
 		ft_putnbr_u(n / 10, box);

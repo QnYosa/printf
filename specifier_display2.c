@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:08:13 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/03 17:20:40 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/04 04:56:09 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ft_putnbr_base(unsigned int n, t_container *box)
 	char	*base;
 
 	base = base_maker(box);
-
 	if (n == 16)
 		box->printed += write(1, "10", 2);
 	else if(n <= (unsigned int)ft_strlen(base) && n >= 0)

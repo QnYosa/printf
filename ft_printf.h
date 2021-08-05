@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/03 17:37:25 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 19:42:02 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_t_container
 	int						steps; //(nombre de space) - (len du int) if int trop grand tout print;
 	int						diez;
 	int						percent;
+	unsigned int			size_hexa;
 	unsigned int			len; // taille de l'argument pour precision et width.
 	int 					letters; // si c'est des nu ou des lettres qu'on manipule. 
 	unsigned int 			width; // ok
@@ -49,7 +50,7 @@ typedef struct s_t_container
 }	t_container;
 
 //flags
-int	ft_printf(const char *str, ...);
+int					ft_printf(const char *str, ...);
 void				flags_maestro(const char **str, t_container *box);
 int					is_flag_(char c, const char **str, t_container *box);
 void				flag_struct_fill(char c, t_container *box);
@@ -78,6 +79,8 @@ int     			ft_atoi(const char **str);
 int					ft_strlen(const char *str);
 char				*ft_strdup(const char *str);
 unsigned int		size_int(int n);
+unsigned int		size_u_int(unsigned int n);
+void				size_hexa(unsigned int n, t_container *box);
 unsigned int		size_unsigned_int(unsigned int n);
 
 #endif

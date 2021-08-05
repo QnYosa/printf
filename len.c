@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 18:35:39 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 19:55:10 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,32 @@ unsigned int	size_int(int n)
 	}
 	return (size);
 }
-/*
-unsigned int	size_unsigned_long_int(unsigned long int)
+
+unsigned int	size_u_int(unsigned int n)
 {
 	unsigned int	size;
-	int				div;
-	unsigned int 	cpy;
+	unsigned int	div;
 
-	if (n < 0)
-		cpy = n * -1;
-	else
-		cpy = n;
 	size = 1;
 	div = 1;
-	while (cpy / div > 9)
+	while (n / div > 9)
 	{
 		div *= 10;
 		size++;
 	}
 	return (size);
 }
-*/
+
+void	size_hexa(unsigned int n, t_container *box)
+{
+	if (n < 16 && n >= 0)
+		box->size_hexa += 1;
+	else
+	{
+		size_hexa(n / 16, box);
+		size_hexa(n % 16, box);
+	}
+}
 
 unsigned int	size_unsigned_int(unsigned int n)
 {

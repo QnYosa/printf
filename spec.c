@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/03 17:34:29 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 19:20:18 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,12 @@ void	spec_maestro(const char **str, t_container *box)
 	spec_struct_attribution(box->spec, box);
 	print_flags(box);
 	struct_disp_maestro(box);
-	if (box->precision_found == 1 && box->precision > size_int(box->number)
-		&& box->letters == 0)
+	if (box->precision_found == 1 && box->precision > size_u_int(box->ui)
+		&& (box->spec == 'u'))
 		print_precision_maestro(box);
+	if (box->precision_found == 1 && box->precision > size_int(box->number)
+		&& box->letters == 0 && box->spec != 'u')
+		if (box->number >= 0)
+			print_precision_maestro(box);
 	spec_display(box);
 }

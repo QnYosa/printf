@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 16:01:51 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/02 19:53:23 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 20:24:35 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,19 @@ void	print_precision_number(t_container *box)
 {
 	unsigned int	i;
 	unsigned int	length;
+	int 			result;
 
 	length = size_int(box->number);
+	if (box->spec == 'u')
+		length = size_u_int(box->ui);
+	else if (box->spec == 'x' || box->spec == 'X')
+	{
+		size_hexa(box->ui, box);
+		length = box->size_hexa;
+	}
+	result = (box->precision - length);
 	i = 0;
-	while (i < box->precision - length)
+	while ((int)i < (result))
 	{
 		box->printed += ft_putchar('0');
 		i++;

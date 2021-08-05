@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 21:48:34 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/03 17:46:00 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 19:32:32 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_re_init_box(t_container *box)
 	box->percent = 0;
 	box->uli = 0;
 	box->width_found = 0;
+	box->size_hexa = 0;
 }
 
 void	ft_init_box(t_container *box)
@@ -53,6 +54,7 @@ void	ft_init_box(t_container *box)
 	box->percent = 0;
 	box->uli = 0;
 	box->width_found = 0;
+	box->size_hexa = 0;
 }
 
 void	ft_maestro(const char **str, t_container *box)
