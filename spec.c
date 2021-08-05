@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/05 19:20:18 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 21:10:35 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	spec_maestro(const char **str, t_container *box)
 {
 	spec_struct_fill(**str, box);
 	spec_struct_attribution(box->spec, box);
-	print_flags(box);
+	printf_flag_maestro(box);
 	struct_disp_maestro(box);
 	if (box->precision_found == 1 && box->precision > size_u_int(box->ui)
 		&& (box->spec == 'u'))

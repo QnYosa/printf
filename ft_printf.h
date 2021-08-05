@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/05 19:42:02 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/05 21:11:09 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ void				flag_struct_fill(char c, t_container *box);
 int					plus(const char *str, int va_arg);
 int					count_width(const char **str, t_container *box);
 void				print_flags(t_container *box);
+void				sharp_display(t_container *box);
+void				printf_flag_maestro(t_container *box);
+
 //width
 void 				width_maestro(const char **str, t_container *box);
 void				print_width(t_container *box);
