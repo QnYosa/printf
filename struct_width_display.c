@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:16:12 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/07 21:24:24 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/07 21:44:13 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,4 @@ void	struct_disp_maestro(t_container *box)
 	{
 		minus_maestro(box);
 	}
-	/*
-	if (box->letters == '1')
-		print_precision_l(box);
-	else
-		print_precision_number(box);
-	if (box->minus == 1)
-		print_width(box);
-		*/
 }
