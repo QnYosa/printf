@@ -47,11 +47,15 @@ void	ft_putnbr(int n, t_container *box)
 	else if (n < 0)
 	{
 		n *= -1;
+		//printf("bienvenue %d\n", box->precision);
 		box->printed += write(1, "-", 1);
 		if (box->width > 1)
 			struct_disp_maestro(box);
-		if (box->number < 0 && box->precision > 1)
+		if (box->number < 0 /*&& box->precision > 1*/)
+		{
+			box->precision -= 1;
 			print_precision_maestro(box);
+		}
 		if (box->zero == 1 && box->precision_found == 1)
 		{
 			box->width -= 1;

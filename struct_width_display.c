@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 15:16:12 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/05 21:51:56 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/07 18:27:20 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ void	assign_len(t_container *box)
 			box->len = box->size_hexa;
 		}
 	}
-		/*
-	if (box->spec == 'p')
-		box-> len = size_unsigned_long_int(box->uli);*/
 }
 
 void	print_width(t_container *box)
