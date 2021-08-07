@@ -18,12 +18,15 @@ unsigned int	size_int(int n)
 	int				div;
 	unsigned int 	cpy;
 
-	if (n < 0)
-		cpy = n * -1;
-	else
-		cpy = n;
 	size = 1;
 	div = 1;
+	if (n < 0)
+	{
+		cpy = n * -1;
+		size++;
+	}
+	else
+		cpy = n;
 	while (cpy / div > 9)
 	{
 		div *= 10;
