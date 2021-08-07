@@ -15,10 +15,19 @@
 void	assign_len(t_container *box)
 {
 	if (box->spec == 'd' || box->spec == 'i')
-		box-> len = size_int(box->number);
+	{
+		box->len = size_int(box->number);
+	}
 	if (box->spec == 'o' || box->spec == 'u' || box->spec == 'x'
 		|| box->spec == 'X')
+	{
 		box->len = size_unsigned_int(box->ui);
+		if (box->spec == 'x' || box->spec == 'X')
+		{
+			size_hexa(box->ui, box);
+			box->len = box->size_hexa;
+		}
+	}
 		/*
 	if (box->spec == 'p')
 		box-> len = size_unsigned_long_int(box->uli);*/

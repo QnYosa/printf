@@ -34,7 +34,8 @@ void	print_precision_number(t_container *box)
 		size_hexa(box->ui, box);
 		length = box->size_hexa;
 	}
-	result = (box->precision - length);
+	//result = (box->precision - length);
+	result = (box->precision - length - box->len);
 	i = 0;
 	while ((int)i < (result))
 	{

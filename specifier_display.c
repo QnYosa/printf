@@ -48,6 +48,8 @@ void	ft_putnbr(int n, t_container *box)
 	{
 		n *= -1;
 		box->printed += write(1, "-", 1);
+		if (box->width > 1)
+			struct_disp_maestro(box);
 		if (box->number < 0 && box->precision > 1)
 			print_precision_maestro(box);
 		if (box->zero == 1 && box->precision_found == 1)

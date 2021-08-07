@@ -73,8 +73,12 @@ void	spec_maestro(const char **str, t_container *box)
 {
 	spec_struct_fill(**str, box);
 	spec_struct_attribution(box->spec, box);
-	printf_flag_maestro(box);
-	struct_disp_maestro(box);
+	if (box->minus == 0 )
+	{
+		printf_flag_maestro(box);
+		if (box->number >= 0)
+			struct_disp_maestro(box);
+	}
 	if (box->precision_found == 1 && box->precision > size_u_int(box->ui)
 		&& (box->spec == 'u'))
 		print_precision_maestro(box);
@@ -83,4 +87,9 @@ void	spec_maestro(const char **str, t_container *box)
 		if (box->number >= 0)
 			print_precision_maestro(box);
 	spec_display(box);
+	if (box->minus == 1)
+	{
+		printf_flag_maestro(box);
+		struct_disp_maestro(box);
+	}
 }
