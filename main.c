@@ -13,8 +13,6 @@ int main ()
 	//printf("hello %d\n", printf("%d\n", 10));
 	//printf("hello %d\n", printf("%10d\n",-9));
 	//printf("hello %d\n", printf("salut %o\n", -42));
-
 	//printf("% d\n", 9);
 	//ft_printf("%010d", 9);
-
 }

@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 16:01:51 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/05 20:24:35 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/06 18:27:14 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	print_precision_number(t_container *box)
 {
 	unsigned int	i;
 	unsigned int	length;
-	int 			result;
+	int1			result;
 
 	length = size_int(box->number);
 	if (box->spec == 'u')
