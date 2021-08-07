@@ -2,7 +2,7 @@ SRCS	= ft_printf.c counters.c flags.c len.c \
 		precision.c spec.c specifier_display.c \
 		specifier_display2.c struct_flags_display.c \
 		struct_width_display.c utils.c width.c \
-		precision_display.c flags_display.c
+		precision_display.c flags_display.c minus.c
 
 OBJS	= ${SRCS:.c=.o}
 

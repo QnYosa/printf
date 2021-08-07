@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 18:30:38 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/05 21:14:13 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/07 18:57:09 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	print_flags(t_container *box)
 		box->printed += ft_putchar(' ');
 }
 
-void sharp_display(t_container *box)
+void	sharp_display(t_container *box)
 {
 	if (box->diez == 1)
 	{
@@ -33,10 +33,10 @@ void sharp_display(t_container *box)
 			box->printed += write(1, "0X", 2);
 	}
 }
-void printf_flag_maestro(t_container *box)
+
+void	printf_flag_maestro(t_container *box)
 {
 	print_flags(box);
 	if (box->ui != 0)
 		sharp_display(box);
-
 }
