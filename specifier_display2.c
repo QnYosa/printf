@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/07 15:08:13 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/04 04:56:09 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/08 17:39:21 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	ft_print_hexa(unsigned long int n, t_container *box)
 	}
 }
 
-char *base_maker(t_container *box)
+char	*base_maker(t_container *box)
 {
-	char *base;
+	char	*base;
 
 	if (box->spec == 'x')
 		base = LOWER_HEX;
@@ -47,7 +47,7 @@ void	ft_putnbr_base(unsigned int n, t_container *box)
 	base = base_maker(box);
 	if (n == 16)
 		box->printed += write(1, "10", 2);
-	else if(n <= (unsigned int)ft_strlen(base) && n >= 0)
+	else if (n <= (unsigned int)ft_strlen(base) && n >= 0)
 		box->printed += ft_putchar(base[n]);
 	else
 	{

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 18:08:56 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/07 18:19:32 by dyoula           ###   ########.fr       */
+/*   Created: 2021/08/08 17:46:32 by dyoula            #+#    #+#             */
+/*   Updated: 2021/08/08 18:26:10 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ unsigned int	size_int(int n)
 {
 	unsigned int	size;
 	int				div;
-	unsigned int 	cpy;
+	unsigned int	cpy;
 
 	size = 1;
 	div = 1;

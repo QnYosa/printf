@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/30 18:30:38 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/07 18:57:09 by dyoula           ###   ########.fr       */
+/*   Created: 2021/08/08 17:46:14 by dyoula            #+#    #+#             */
+/*   Updated: 2021/08/08 17:46:17 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	print_flags(t_container *box)
 {
-	if (box->plus == 1 && box->number >= 0 &&
-		(box->spec == 'd' || box->spec == 'i'))
+	if (box->plus == 1 && box->number >= 0
+		&& (box->spec == 'd' || box->spec == 'i'))
 		box->printed += ft_putchar('+');
 	else if (box->space == 1 && box->number >= 0
 		&& (box->spec == 'd' || box->spec == 'i')

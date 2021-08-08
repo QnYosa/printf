@@ -6,11 +6,17 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 17:48:40 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/07 19:00:40 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/08 17:43:57 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	recursion(int n, t_container *box)
+{
+	ft_putnbr(n / 10, box);
+	ft_putnbr(n % 10, box);
+}
 
 int	spec_struct_attribution(char c, t_container *box)
 {

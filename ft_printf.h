@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 17:32:44 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/07 21:23:38 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/08 17:44:28 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@
 typedef struct s_t_container
 {
 	int						minus;
-	int 					plus;
-	int 					space;
+	int						plus;
+	int						space;
 	int						zero;
-	int						steps; //(nombre de space) - (len du int) if int trop grand tout print;
+	int						steps;
 	int						diez;
 	int						percent;
 	unsigned int			size_hexa;
-	unsigned int			len; // taille de l'argument pour precision et width.
-	int 					letters; // si c'est des nu ou des lettres qu'on manipule. 
-	unsigned int 			width; // ok
+	unsigned int			len;
+	int						letters;
+	unsigned int			width;
 	unsigned int			width_found;
 	unsigned int			precision;
 	int						precision_found;
 	char					spec;
-	int 					printed;
+	int						printed;
 	int						number;
 	unsigned long int		uli;
 	unsigned int			ui;
@@ -49,7 +49,6 @@ typedef struct s_t_container
 	va_list					params;
 }	t_container;
 
-//flags
 int					ft_printf(const char *str, ...);
 void				flags_maestro(const char **str, t_container *box);
 int					is_flag_(char c, const char **str, t_container *box);
@@ -59,33 +58,25 @@ int					count_width(const char **str, t_container *box);
 void				print_flags(t_container *box);
 void				sharp_display(t_container *box);
 void				printf_flag_maestro(t_container *box);
-
-//width
 void				width_maestro(const char **str, t_container *box);
 void				print_width(t_container *box);
 void				minus_maestro(t_container *box);
-
-//precision
 void				precision_maestro(const char **str, t_container *box);
 void				print_precision_maestro(t_container *box);
-
-//display
 int					ft_putchar(char c);
 int					ft_putnstr(char *str, int n);
 void				ft_putnbr(int n, t_container *box);
 void				ft_putnbr_u(unsigned int n, t_container *box);
 void				ft_print_address(unsigned long int n, t_container *box);
 void				ft_putnbr_base(unsigned int n, t_container *box);
-// maestro
 void				struct_disp_maestro(t_container *box);
 void				spec_maestro(const char **str, t_container *box);
-//utils
-int     			ft_atoi(const char **str);
+int					ft_atoi(const char **str);
 int					ft_strlen(const char *str);
 char				*ft_strdup(const char *str);
 unsigned int		size_int(int n);
 unsigned int		size_u_int(unsigned int n);
 void				size_hexa(unsigned int n, t_container *box);
 unsigned int		size_unsigned_int(unsigned int n);
-
+void				recursion(int n, t_container *box);
 #endif

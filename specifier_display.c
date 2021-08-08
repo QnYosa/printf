@@ -6,7 +6,7 @@
 /*   By: dyoula <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 21:34:39 by dyoula            #+#    #+#             */
-/*   Updated: 2021/08/07 21:34:54 by dyoula           ###   ########.fr       */
+/*   Updated: 2021/08/08 17:44:14 by dyoula           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,7 @@ void	ft_putnbr(int n, t_container *box)
 	if (n <= 9 && n >= 0)
 		box->printed += ft_putchar('0' + n);
 	else
-	{
-		ft_putnbr(n / 10, box);
-		ft_putnbr(n % 10, box);
-	}
+		recursion(n, box);
 }
 
 void	ft_putnbr_u(unsigned int n, t_container *box)
