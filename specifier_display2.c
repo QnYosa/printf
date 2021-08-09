@@ -17,9 +17,17 @@ void	ft_print_hexa(unsigned long int n, t_container *box)
 	static char	base[] = LOWER_HEX;
 
 	if (n == 16)
+	{
 		box->printed += write(1, "10", 2);
+		if (box->spec == 'p')
+			box->size_hexa += 2;
+	}
 	else if (n < 16 && n >= 0)
+	{
 		box->printed += ft_putchar(base[n]);
+		if (box->spec == 'p')
+			box->size_hexa++;
+	}
 	else
 	{
 		ft_print_hexa(n / 16, box);
@@ -60,5 +68,7 @@ void	ft_print_address(unsigned long int n, t_container *box)
 {
 	box->printed += ft_putchar('0');
 	box->printed += ft_putchar('x');
+	if (box->spec == 'p')
+		box->size_hexa += 2;
 	ft_print_hexa(n, box);
 }

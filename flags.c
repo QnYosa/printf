@@ -51,5 +51,7 @@ void	flags_maestro(const char **str, t_container *box)
 	{
 		flag_struct_fill(**str, box);
 		(*str)++;
+		if (box->minus == 1)
+			box->zero = 0;
 	}
 }

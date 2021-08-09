@@ -40,9 +40,17 @@ void	print_width(t_container *box)
 	assign_len(box);
 	i = 0;
 	result = box->width - box->len;
-	if (box->zero == 0 && box->spec != 'p')
+	if (box->zero == 0 && (box->spec != 'p'))
 	{
 		while ((int)i < (result))
+		{
+			box->printed += ft_putchar(' ');
+			i++;
+		}
+	}
+	else if (box->zero == 0)
+	{
+		while ((int)i < (result - (int)box->size_hexa))
 		{
 			box->printed += ft_putchar(' ');
 			i++;
